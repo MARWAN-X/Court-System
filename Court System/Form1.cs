@@ -48,6 +48,7 @@ namespace Court_System
                 Menu menuForm = new Menu();
                 this.Hide();
                 menuForm.Show();
+                conn.Dispose();
             }
             else
             {
