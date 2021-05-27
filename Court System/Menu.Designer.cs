@@ -42,6 +42,7 @@ namespace Court_System
             this.btn_Judges.TabIndex = 1;
             this.btn_Judges.Text = "Judges";
             this.btn_Judges.UseVisualStyleBackColor = true;
+            this.btn_Judges.Click += new System.EventHandler(this.btn_Judges_Click);
             // 
             // btn_court
             // 
@@ -51,6 +52,7 @@ namespace Court_System
             this.btn_court.TabIndex = 2;
             this.btn_court.Text = "Court";
             this.btn_court.UseVisualStyleBackColor = true;
+            this.btn_court.Click += new System.EventHandler(this.btn_court_Click);
             // 
             // btn_Cases
             // 
@@ -60,6 +62,7 @@ namespace Court_System
             this.btn_Cases.TabIndex = 3;
             this.btn_Cases.Text = "Cases";
             this.btn_Cases.UseVisualStyleBackColor = true;
+            this.btn_Cases.Click += new System.EventHandler(this.btn_Cases_Click);
             // 
             // Menu
             // 

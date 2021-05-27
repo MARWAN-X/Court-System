@@ -16,5 +16,22 @@ namespace Court_System
         {
             InitializeComponent();
         }
+
+        private void btn_Cases_Click(object sender, EventArgs e)
+        {
+            Cases casesForm = new Cases();
+            this.Hide();
+            casesForm.Show();
+        }
+
+        private void btn_Judges_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_court_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
