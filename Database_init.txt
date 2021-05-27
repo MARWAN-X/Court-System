@@ -1,0 +1,148 @@
+CREATE TABLE PoliceIT
+(
+	PIT_SSN number(14) NOT NULL PRIMARY KEY,
+	PIT_Username varchar(255),
+	PIT_Password varchar(255),
+	PIT_Role varchar(255),
+	PIT_FName varchar(255),
+	PIT_LName varchar(255),
+	PIT_Birthdate Date,
+	PIT_PhoneNumber number(11)
+);
+
+CREATE TABLE Judges
+(
+	J_SSN number(14) NOT NULL PRIMARY KEY,
+	J_Rank varchar(255),
+	J_FName varchar(255),
+	J_LName varchar(255),
+	J_Birthdate Date,
+	J_PhoneNumber number(11)
+);
+
+CREATE TABLE Court
+(
+	C_RoomName varchar(255) NOT NULL PRIMARY KEY,
+	C_governorate varchar(255),
+	C_StreetName varchar(255),
+	C_MaxCapacity int
+);
+
+CREATE TABLE Prisoners
+(
+	Pri_SSN number(14) NOT NULL PRIMARY KEY,
+	Pri_FName varchar(255),
+	Pri_LName varchar(255),
+	Pri_Birthdate Date,
+	Pri_PrisonName varchar(255),
+	Pri_SentenceDuration int
+);
+
+CREATE TABLE Victims
+(
+	V_SSN number(14) NOT NULL PRIMARY KEY,
+	V_FName varchar(255),
+	V_LName varchar(255),
+	V_Birthdate Date,
+	V_PhoneNumber number(11)
+);
+
+CREATE TABLE Lawyers
+(
+	L_SSN number(14) NOT NULL PRIMARY KEY,
+	L_FName varchar(255),
+	L_LName varchar(255),
+	L_Birthdate Date,
+	L_PhoneNumber number(11)
+);
+
+CREATE TABLE Cases
+(
+	Case_ID int NOT NULL PRIMARY KEY,
+	Case_Name varchar(255) NOT NULL,
+	Case_Description varchar(255),
+	Case_Status varchar(255),
+	Case_Date Date,
+	C_Roomname varchar(255) NOT NULL
+);
+
+CREATE TABLE Judging
+(
+	Judging_J_SSN number(14) NOT NULL,
+	Judging_Case_ID int NOT NULL,
+
+	CONSTRAINT FK_Judging_J_SSN FOREIGN KEY (Judging_J_SSN)
+	REFERENCES JUDGES(J_SSN),
+  
+	CONSTRAINT FK_Judging_Case_ID FOREIGN KEY (Judging_Case_ID)
+	REFERENCES CASES(Case_ID),
+    
+	CONSTRAINT PK_Judging PRIMARY KEY (Judging_Case_ID, Judging_J_SSN)
+);
+
+CREATE TABLE Senteced
+(
+	Senteced_Pri_SSN number(14) NOT NULL,
+	Senteced_Case_ID int NOT NULL,
+  
+	CONSTRAINT FK_Senteced_Pri_SSN FOREIGN KEY (Senteced_Pri_SSN)
+	REFERENCES Prisoners(Pri_SSN),
+  
+	CONSTRAINT FK_Senteced_Case_ID FOREIGN KEY (Senteced_Case_ID)
+	REFERENCES CASES(Case_ID),
+  
+	CONSTRAINT PK_Senteced PRIMARY KEY (Senteced_Case_ID, Senteced_Pri_SSN)
+);
+
+CREATE TABLE Defends
+(
+	Defends_Pri_SSN number(14) NOT NULL ,
+	Defends_L_SSN number(14) NOT NULL,
+  
+	CONSTRAINT FK_Defends_Pri_SSN FOREIGN KEY (Defends_Pri_SSN)
+	REFERENCES Prisoners(Pri_SSN),
+  
+	CONSTRAINT FK_Defends_L_SSN FOREIGN KEY (Defends_L_SSN)
+	REFERENCES Lawyers(L_SSN),
+  
+	CONSTRAINT PK_Defends PRIMARY KEY (Defends_Pri_SSN, Defends_L_SSN)
+);
+
+CREATE TABLE Represent
+(
+	Represent_V_SSN number(14) NOT NULL,
+	Represent_L_SSN number(14) NOT NULL,
+	
+	CONSTRAINT FK_Represent_V_SSN FOREIGN KEY (Represent_V_SSN)
+	REFERENCES Victims(V_SSN),
+	
+	CONSTRAINT FK_Represent_L_SSN FOREIGN KEY (Represent_L_SSN)
+	REFERENCES Lawyers(L_SSN),
+
+	CONSTRAINT PK_Represent PRIMARY KEY (Represent_L_SSN, Represent_V_SSN)
+);
+
+CREATE TABLE Pleading
+(
+	Pleading_Case_ID number(14) NOT NULL,
+	Pleading_L_SSN number(14) NOT NULL,
+
+	CONSTRAINT FK_Pleading_Case_ID FOREIGN KEY (Pleading_Case_ID)
+	REFERENCES Cases(Case_ID),
+
+	CONSTRAINT FK_Pleading_L_SSN FOREIGN KEY (Pleading_L_SSN)
+	REFERENCES Lawyers(L_SSN),
+
+	CONSTRAINT PK_Pleading PRIMARY KEY (Pleading_L_SSN , Pleading_Case_ID)
+);
+
+CREATE TABLE Family_PhoneNO
+(
+	Pri_SSN number(14) NOT NULL,
+	Family_PhoneNO number(11) NOT NULL,
+
+	CONSTRAINT FK_Pri_SSN FOREIGN KEY (Pri_SSN)
+	REFERENCES Prisoners(Pri_SSN),
+
+	CONSTRAINT PK_Family_PhoneNO PRIMARY KEY (Pri_SSN, Family_PhoneNO)
+);
