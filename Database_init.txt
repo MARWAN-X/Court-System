@@ -146,3 +146,52 @@ CREATE TABLE Family_PhoneNO
 
 	CONSTRAINT PK_Family_PhoneNO PRIMARY KEY (Pri_SSN, Family_PhoneNO)
 );
+
+
+
+
+INSERT INTO Judges
+VALUES
+(12345768912346,'rank1','ahmed','mohamed','01-AUG-61',01112315678);
+
+INSERT INTO Judges
+VALUES
+(12345768912326,'rank2','tamer','ahmed','01-SEP-64',011127415678);
+
+INSERT INTO Judges
+VALUES
+(12345768912376,'rank3','fawzy','marwan','01-JUN-62',011123154128);
+
+INSERT INTO Judges
+VALUES
+(12345768912746,'rank4','mohsen','yassen','01-AUG-51',01112315658);
+
+INSERT INTO Court
+VALUES
+('saeed abdelwahaab','cairo','algabrty',50);
+
+INSERT INTO Cases
+VALUES
+(1,'copyrights','www.google.com','pending','01-AUG-05','saeed abdelwahaab');
+
+INSERT INTO Cases
+VALUES
+(2,'murder','www.google.com','finished','01-AUG-20','saeed abdelwahaab');
+
+INSERT INTO judging
+values
+(12345768912346,1);
+
+INSERT INTO judging
+values
+(12345768912346, 2);
+
+create or replace procedure get_cases
+(J_ID in NUMBER, CID out sys_refcursor)
+as
+BEGIN
+open CID for
+select * FROM cases 
+where cases.case_id in (SELECT Judging_case_id FROM judging 
+                        where judging_j_ssn = J_ID);
+end;
