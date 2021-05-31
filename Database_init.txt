@@ -195,3 +195,13 @@ select * FROM cases
 where cases.case_id in (SELECT Judging_case_id FROM judging 
                         where judging_j_ssn = J_ID);
 end;
+
+create or replace procedure login
+(Username in varchar2, Password out varchar2)
+as
+BEGIN
+select PIT_Password 
+into Password
+from PoliceIT
+where PIT_Username = Username;
+end;

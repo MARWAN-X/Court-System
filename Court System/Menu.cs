@@ -26,12 +26,16 @@ namespace Court_System
 
         private void btn_Judges_Click(object sender, EventArgs e)
         {
-
+            Judges judgesForm = new Judges();
+            this.Hide();
+            judgesForm.Show();
         }
 
         private void btn_court_Click(object sender, EventArgs e)
         {
-
+            Court courtForm = new Court();
+            this.Hide();
+            courtForm.Show();
         }
     }
 }

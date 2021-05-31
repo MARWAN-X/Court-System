@@ -38,17 +38,18 @@ namespace Court_System
         {
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.Text = "select count(*) from PoliceIT where PIT_Username =:username AND PIT_Password=:password";
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("username", txt_username.Text);
-            cmd.Parameters.Add("password", txt_password.Text);
-            int numberOfMatchedRows = cmd.ExecuteNonQuery();
-            if (numberOfMatchedRows == 1)
+            cmd.CommandText = "login";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("Username", txt_username.Text);
+            cmd.Parameters.Add("Password", OracleDbType.Varchar2, ParamaterDirection.Output);
+            cmd.ExecuteNonQuery();
+            if (cmd.Parameters["Password"].Value.ToString == txt_password.Text)
             {
+                conn.Dispose();
                 Menu menuForm = new Menu();
                 this.Hide();
                 menuForm.Show();
-                conn.Dispose();
+                
             }
             else
             {
