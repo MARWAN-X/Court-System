@@ -111,6 +111,13 @@ namespace Court_System
 
             d.Close();
         }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Menu menuForm = new Menu();
+            this.Hide();
+            menuForm.Show();
+        }
         //12345768912346
     }
 }

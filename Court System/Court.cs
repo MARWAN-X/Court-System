@@ -14,7 +14,8 @@ namespace Court_System
 {
     public partial class Court : Form
     {
-        string db = "Data source=orcl; User Id=hr; Password=hr";
+
+        string db = "Data source=orcl;User Id=hr; password=hr";
         OracleConnection conn;
 
         public Court()
@@ -22,25 +23,46 @@ namespace Court_System
             InitializeComponent();
         }
 
-        private void Court_Form_Load(object sender, EventArgs e)
+
+        private void view_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Court_Load(object sender, EventArgs e)
         {
             conn = new OracleConnection(db);
             conn.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "select C_RoomName from Court";
+            cmd.CommandText = "select * from Court";
             cmd.CommandType = CommandType.Text;
-            OracleDataReader dr = cmd.ExecuteQuery();
-            while(dr.Read())
+
+            OracleDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                cmb_names.Items.Add(dr[0]);
+                cmb_names.Items.Add(dr["C_RoomName"]);
             }
             dr.Close();
-            conn.dispose();
+
+            //   conn.Dispose();
         }
-        private void view_btn_Click(object sender, EventArgs e)
+
+        private void cmb_names_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_back_Click(object sender, EventArgs e)
+        {
+            Menu menuForm = new Menu();
+            this.Hide();
+            menuForm.Show();
         }
     }
 }

@@ -37,24 +37,38 @@ namespace Court_System
         private void button1_Click(object sender, EventArgs e)
         {
             OracleCommand cmd = new OracleCommand();
+            try
+            {
+                long test = long.Parse(txt_username.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please enter valid SSN");
+                return;
+            }
             cmd.Connection = conn;
             cmd.CommandText = "login";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("Username", txt_username.Text);
-            cmd.Parameters.Add("Password", OracleDbType.Varchar2, ParamaterDirection.Output);
+            cmd.Parameters.Add("SSN", txt_username.Text);
+            cmd.Parameters.Add("Password1", txt_password.Text);
+            cmd.Parameters.Add("ret", OracleDbType.Int32, ParameterDirection.Output);
             cmd.ExecuteNonQuery();
-            if (cmd.Parameters["Password"].Value.ToString == txt_password.Text)
+            if (Convert.ToInt32(cmd.Parameters["ret"].Value.ToString()) == 1)
             {
                 conn.Dispose();
                 Menu menuForm = new Menu();
                 this.Hide();
-                menuForm.Show();
-                
+                menuForm.Show();    
             }
             else
             {
-                MessageBox.Show("Wrong Username or Password");
+                MessageBox.Show("Wrong SSN or Password");
             }
+        }
+
+        private void txt_username_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

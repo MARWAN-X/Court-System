@@ -205,3 +205,17 @@ into Password
 from PoliceIT
 where PIT_Username = Username;
 end;
+
+
+create or replace procedure login
+(SSN in Number, Password1 in varchar2,ret out NUMBER)
+as
+BEGIN
+select count(*) 
+into ret
+from PoliceIT
+where PIT_SSN = SSN and password1 = pit_password;
+end;
+
+
+insert into  PoliceIT values(12345678912345,'hamada','hamada123','hamda','helaal',NULL,NULL);

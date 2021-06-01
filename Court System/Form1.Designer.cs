@@ -29,12 +29,10 @@ namespace Court_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.txt_password = new System.Windows.Forms.MaskedTextBox();
-            this.lbl_username = new System.Windows.Forms.Label();
+            this.lbl_SSN = new System.Windows.Forms.Label();
             this.lbl_password = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -44,6 +42,7 @@ namespace Court_System
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(129, 20);
             this.txt_username.TabIndex = 0;
+            this.txt_username.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
             // 
             // txt_password
             // 
@@ -52,15 +51,15 @@ namespace Court_System
             this.txt_password.Size = new System.Drawing.Size(129, 20);
             this.txt_password.TabIndex = 1;
             // 
-            // lbl_username
+            // lbl_SSN
             // 
-            this.lbl_username.AutoSize = true;
-            this.lbl_username.Location = new System.Drawing.Point(201, 131);
-            this.lbl_username.Name = "lbl_username";
-            this.lbl_username.Size = new System.Drawing.Size(55, 13);
-            this.lbl_username.TabIndex = 2;
-            this.lbl_username.Text = "Username";
-            this.lbl_username.Click += new System.EventHandler(this.lbl_username_Click);
+            this.lbl_SSN.AutoSize = true;
+            this.lbl_SSN.Location = new System.Drawing.Point(201, 131);
+            this.lbl_SSN.Name = "lbl_SSN";
+            this.lbl_SSN.Size = new System.Drawing.Size(29, 13);
+            this.lbl_SSN.TabIndex = 2;
+            this.lbl_SSN.Text = "SSN";
+            this.lbl_SSN.Click += new System.EventHandler(this.lbl_username_Click);
             // 
             // lbl_password
             // 
@@ -70,11 +69,6 @@ namespace Court_System
             this.lbl_password.Size = new System.Drawing.Size(53, 13);
             this.lbl_password.TabIndex = 3;
             this.lbl_password.Text = "Password";
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
             // 
             // button1
             // 
@@ -93,7 +87,7 @@ namespace Court_System
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_password);
-            this.Controls.Add(this.lbl_username);
+            this.Controls.Add(this.lbl_SSN);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_username);
             this.Name = "Log_In_Form";
@@ -108,9 +102,8 @@ namespace Court_System
 
         private System.Windows.Forms.TextBox txt_username;
         private System.Windows.Forms.MaskedTextBox txt_password;
-        private System.Windows.Forms.Label lbl_username;
+        private System.Windows.Forms.Label lbl_SSN;
         private System.Windows.Forms.Label lbl_password;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Button button1;
     }
 }

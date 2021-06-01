@@ -43,6 +43,7 @@ namespace Court_System
             this.lbl_rank_val = new System.Windows.Forms.Label();
             this.btn_get_info = new System.Windows.Forms.Button();
             this.data_Judge = new System.Windows.Forms.DataGridView();
+            this.btn_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.data_Judge)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,11 +172,22 @@ namespace Court_System
             this.data_Judge.Size = new System.Drawing.Size(645, 253);
             this.data_Judge.TabIndex = 5;
             // 
+            // btn_back
+            // 
+            this.btn_back.Location = new System.Drawing.Point(58, 30);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(75, 23);
+            this.btn_back.TabIndex = 6;
+            this.btn_back.Text = "back";
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // Judges
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 603);
+            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.data_Judge);
             this.Controls.Add(this.btn_get_info);
             this.Controls.Add(this.lbl_phoneNo);
@@ -215,5 +227,6 @@ namespace Court_System
         private System.Windows.Forms.Label lbl_rank_val;
         private System.Windows.Forms.Button btn_get_info;
         private System.Windows.Forms.DataGridView data_Judge;
+        private System.Windows.Forms.Button btn_back;
     }
 }
