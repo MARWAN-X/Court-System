@@ -196,16 +196,6 @@ where cases.case_id in (SELECT Judging_case_id FROM judging
                         where judging_j_ssn = J_ID);
 end;
 
-create or replace procedure login
-(Username in varchar2, Password out varchar2)
-as
-BEGIN
-select PIT_Password 
-into Password
-from PoliceIT
-where PIT_Username = Username;
-end;
-
 
 create or replace procedure login
 (SSN in Number, Password1 in varchar2,ret out NUMBER)
@@ -218,4 +208,4 @@ where PIT_SSN = SSN and password1 = pit_password;
 end;
 
 
-insert into  PoliceIT values(12345678912345,'hamada','hamada123','hamda','helaal',NULL,NULL);
+insert into  PoliceIT values(12345678912345,'hamada','hamada123','role1','hamada','helal',NULL,NULL);
