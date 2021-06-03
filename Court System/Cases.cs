@@ -42,46 +42,66 @@ namespace Court_System
             cmb_case_status.Items.Add("closed");
         }
 
+        private bool check_boxes()
+        {
+            bool emptyy = false;
+            if (txt_case_name.Text == String.Empty)
+                emptyy = true;
+            if (txt_case_description.Text == String.Empty)
+                emptyy = true;
+            if (cmb_case_status.SelectedItem == String.Empty)
+                emptyy = true;
+            if (txt_case_room_name.Text == String.Empty)
+                emptyy = true;
 
+            return emptyy;
+        }
         private void btn_insert_Click(object sender, EventArgs e)
         {
-            int maxID, newID;
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "GETCASEID";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("id", OracleDbType.Int32, ParameterDirection.Output);
-            cmd.ExecuteNonQuery();
-            try
+            if (check_boxes() == false)
             {
-                maxID = Convert.ToInt32(cmd.Parameters["id"].Value.ToString());
-                newID = maxID + 1;
+                int maxID, newID;
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "GETCASEID";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("id", OracleDbType.Int32, ParameterDirection.Output);
+                cmd.ExecuteNonQuery();
+                try
+                {
+                    maxID = Convert.ToInt32(cmd.Parameters["id"].Value.ToString());
+                    newID = maxID + 1;
+                }
+                catch
+                {
+                    newID = 1;
+                }
+                OracleCommand c1 = new OracleCommand();
+                c1.Connection = conn;
+                c1.CommandText = "INSERT INTO CASES VALUES(:CID,:CNAME,:CDESC,:CSTATUS,:CDATE,:CROOMNAME)";
+                c1.CommandType = CommandType.Text;
+                c1.Parameters.Add("CID", newID);
+                c1.Parameters.Add("CNAME", txt_case_name.Text);
+                c1.Parameters.Add("CDESC", txt_case_description.Text);
+                c1.Parameters.Add("CSTATUS", cmb_case_status.Text);
+                c1.Parameters.Add("CDATE", case_date.Value);
+                c1.Parameters.Add("CROOMNAME", txt_case_room_name.Text);
+                c1.ExecuteNonQuery();
+                cmb_case_id.Text = String.Empty;
+                txt_case_name.Text = String.Empty;
+                txt_case_description.Text = String.Empty;
+                cmb_case_status.Text = String.Empty;
+                case_date.Value = DateTime.Now;
+                txt_case_room_name.Text = String.Empty;
+                cmb_case_id.Items.Add(newID.ToString());
+                cmb_case_id.SelectedIndex = -1;
+                cmb_case_status.SelectedIndex = -1;
+                MessageBox.Show("Case Info inserted successfully\n your Case ID: " + newID);
             }
-            catch
+            else
             {
-                newID = 1;
+                MessageBox.Show("Please fill all your data");
             }
-            OracleCommand c1 = new OracleCommand();
-            c1.Connection = conn;
-            c1.CommandText = "INSERT INTO CASES VALUES(:CID,:CNAME,:CDESC,:CSTATUS,:CDATE,:CROOMNAME)";
-            c1.CommandType = CommandType.Text;
-            c1.Parameters.Add("CID", newID);
-            c1.Parameters.Add("CNAME", txt_case_name.Text);
-            c1.Parameters.Add("CDESC", txt_case_description.Text);
-            c1.Parameters.Add("CSTATUS", cmb_case_status.Text);
-            c1.Parameters.Add("CDATE", case_date.Value);
-            c1.Parameters.Add("CROOMNAME", txt_case_room_name.Text);
-            c1.ExecuteNonQuery();
-            cmb_case_id.Text = String.Empty;
-            txt_case_name.Text = String.Empty;
-            txt_case_description.Text = String.Empty;
-            cmb_case_status.Text = String.Empty;
-            case_date.Value = DateTime.Now;
-            txt_case_room_name.Text = String.Empty;
-            cmb_case_id.Items.Add(newID.ToString());
-            cmb_case_id.SelectedIndex = -1;
-            cmb_case_status.SelectedIndex = -1;
-            MessageBox.Show("Case Info inserted successfully\n your Case ID: " + newID);
         }
 
         private void cmb_case_id_SelectedIndexChanged(object sender, EventArgs e)
@@ -131,21 +151,33 @@ namespace Court_System
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            string constr = "Data source=orcl; User Id=hr; Password=hr";
-            string cmdstr = "select * from CASES where CASE_ID=:cid";
-            OracleDataAdapter adapter = new OracleDataAdapter(cmdstr, constr);
+            if (check_boxes() == false)
+            {
+                if (cmb_case_id.SelectedItem != null)
+                {
+                    string constr = "Data source=orcl; User Id=hr; Password=hr";
+                    string cmdstr = "select * from CASES where CASE_ID=:cid";
+                    OracleDataAdapter adapter = new OracleDataAdapter(cmdstr, constr);
 
-            adapter.SelectCommand.Parameters.Add("cid", cmb_case_id.SelectedItem.ToString());
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            ds.Tables[0].Rows[0][1] = txt_case_name.Text;
-            ds.Tables[0].Rows[0][2] = txt_case_description.Text;
-            ds.Tables[0].Rows[0][3] = cmb_case_status.Text;
-            ds.Tables[0].Rows[0][4] = case_date.Value;
-            ds.Tables[0].Rows[0][5] = txt_case_room_name.Text;
-            OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
-            adapter.Update(ds.Tables[0]);
-            MessageBox.Show("Update is Done Successfully");
+                    adapter.SelectCommand.Parameters.Add("cid", cmb_case_id.SelectedItem.ToString());
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+                    ds.Tables[0].Rows[0][1] = txt_case_name.Text;
+                    ds.Tables[0].Rows[0][2] = txt_case_description.Text;
+                    ds.Tables[0].Rows[0][3] = cmb_case_status.Text;
+                    ds.Tables[0].Rows[0][4] = case_date.Value;
+                    ds.Tables[0].Rows[0][5] = txt_case_room_name.Text;
+                    OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
+                    adapter.Update(ds.Tables[0]);
+                    MessageBox.Show("Update is Done Successfully");
+                }
+                else
+                    MessageBox.Show("Please choose Case ID to Update");
+            }
+            else
+            {
+                MessageBox.Show("Please fill all your data");
+            }
         }
 
         private void Cases_FormClosing(object sender, FormClosingEventArgs e)
