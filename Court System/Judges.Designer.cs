@@ -49,27 +49,30 @@ namespace Court_System
             // 
             // txt_JudgeID
             // 
-            this.txt_JudgeID.Location = new System.Drawing.Point(370, 30);
+            this.txt_JudgeID.Location = new System.Drawing.Point(493, 37);
+            this.txt_JudgeID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_JudgeID.Name = "txt_JudgeID";
-            this.txt_JudgeID.Size = new System.Drawing.Size(147, 20);
+            this.txt_JudgeID.Size = new System.Drawing.Size(195, 22);
             this.txt_JudgeID.TabIndex = 0;
             this.txt_JudgeID.TextChanged += new System.EventHandler(this.txt_JudgeID_TextChanged);
             // 
             // lbl_JudgeID
             // 
             this.lbl_JudgeID.AutoSize = true;
-            this.lbl_JudgeID.Location = new System.Drawing.Point(269, 37);
+            this.lbl_JudgeID.Location = new System.Drawing.Point(359, 46);
+            this.lbl_JudgeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_JudgeID.Name = "lbl_JudgeID";
-            this.lbl_JudgeID.Size = new System.Drawing.Size(50, 13);
+            this.lbl_JudgeID.Size = new System.Drawing.Size(64, 17);
             this.lbl_JudgeID.TabIndex = 1;
             this.lbl_JudgeID.Text = "Judge ID";
             // 
             // lbl_f_name
             // 
             this.lbl_f_name.AutoSize = true;
-            this.lbl_f_name.Location = new System.Drawing.Point(269, 79);
+            this.lbl_f_name.Location = new System.Drawing.Point(359, 97);
+            this.lbl_f_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_f_name.Name = "lbl_f_name";
-            this.lbl_f_name.Size = new System.Drawing.Size(57, 13);
+            this.lbl_f_name.Size = new System.Drawing.Size(76, 17);
             this.lbl_f_name.TabIndex = 1;
             this.lbl_f_name.Text = "First Name";
             this.lbl_f_name.Click += new System.EventHandler(this.label1_Click);
@@ -77,9 +80,10 @@ namespace Court_System
             // lbl_l_name
             // 
             this.lbl_l_name.AutoSize = true;
-            this.lbl_l_name.Location = new System.Drawing.Point(269, 125);
+            this.lbl_l_name.Location = new System.Drawing.Point(359, 154);
+            this.lbl_l_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_l_name.Name = "lbl_l_name";
-            this.lbl_l_name.Size = new System.Drawing.Size(58, 13);
+            this.lbl_l_name.Size = new System.Drawing.Size(76, 17);
             this.lbl_l_name.TabIndex = 1;
             this.lbl_l_name.Text = "Last Name";
             this.lbl_l_name.Click += new System.EventHandler(this.label2_Click);
@@ -87,27 +91,30 @@ namespace Court_System
             // lbl_rank
             // 
             this.lbl_rank.AutoSize = true;
-            this.lbl_rank.Location = new System.Drawing.Point(269, 172);
+            this.lbl_rank.Location = new System.Drawing.Point(359, 212);
+            this.lbl_rank.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_rank.Name = "lbl_rank";
-            this.lbl_rank.Size = new System.Drawing.Size(33, 13);
+            this.lbl_rank.Size = new System.Drawing.Size(41, 17);
             this.lbl_rank.TabIndex = 1;
             this.lbl_rank.Text = "Rank";
             // 
             // lbl_birthdate
             // 
             this.lbl_birthdate.AutoSize = true;
-            this.lbl_birthdate.Location = new System.Drawing.Point(269, 213);
+            this.lbl_birthdate.Location = new System.Drawing.Point(359, 262);
+            this.lbl_birthdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_birthdate.Name = "lbl_birthdate";
-            this.lbl_birthdate.Size = new System.Drawing.Size(49, 13);
+            this.lbl_birthdate.Size = new System.Drawing.Size(65, 17);
             this.lbl_birthdate.TabIndex = 1;
             this.lbl_birthdate.Text = "Birthdate";
             // 
             // lbl_phoneNo
             // 
             this.lbl_phoneNo.AutoSize = true;
-            this.lbl_phoneNo.Location = new System.Drawing.Point(269, 257);
+            this.lbl_phoneNo.Location = new System.Drawing.Point(359, 316);
+            this.lbl_phoneNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_phoneNo.Name = "lbl_phoneNo";
-            this.lbl_phoneNo.Size = new System.Drawing.Size(78, 13);
+            this.lbl_phoneNo.Size = new System.Drawing.Size(103, 17);
             this.lbl_phoneNo.TabIndex = 1;
             this.lbl_phoneNo.Text = "Phone Number";
             this.lbl_phoneNo.Click += new System.EventHandler(this.label5_Click);
@@ -115,50 +122,56 @@ namespace Court_System
             // lbl_birthdate_val
             // 
             this.lbl_birthdate_val.AutoSize = true;
-            this.lbl_birthdate_val.Location = new System.Drawing.Point(408, 213);
+            this.lbl_birthdate_val.Location = new System.Drawing.Point(544, 262);
+            this.lbl_birthdate_val.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_birthdate_val.Name = "lbl_birthdate_val";
-            this.lbl_birthdate_val.Size = new System.Drawing.Size(0, 13);
+            this.lbl_birthdate_val.Size = new System.Drawing.Size(0, 17);
             this.lbl_birthdate_val.TabIndex = 1;
             // 
             // lbl_phoneNumber_val
             // 
             this.lbl_phoneNumber_val.AutoSize = true;
-            this.lbl_phoneNumber_val.Location = new System.Drawing.Point(408, 257);
+            this.lbl_phoneNumber_val.Location = new System.Drawing.Point(544, 316);
+            this.lbl_phoneNumber_val.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_phoneNumber_val.Name = "lbl_phoneNumber_val";
-            this.lbl_phoneNumber_val.Size = new System.Drawing.Size(0, 13);
+            this.lbl_phoneNumber_val.Size = new System.Drawing.Size(0, 17);
             this.lbl_phoneNumber_val.TabIndex = 1;
             // 
             // lbl_f_name_val
             // 
             this.lbl_f_name_val.AutoSize = true;
-            this.lbl_f_name_val.Location = new System.Drawing.Point(401, 79);
+            this.lbl_f_name_val.Location = new System.Drawing.Point(535, 97);
+            this.lbl_f_name_val.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_f_name_val.Name = "lbl_f_name_val";
-            this.lbl_f_name_val.Size = new System.Drawing.Size(0, 13);
+            this.lbl_f_name_val.Size = new System.Drawing.Size(0, 17);
             this.lbl_f_name_val.TabIndex = 1;
             this.lbl_f_name_val.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbl_l_name_val
             // 
             this.lbl_l_name_val.AutoSize = true;
-            this.lbl_l_name_val.Location = new System.Drawing.Point(401, 125);
+            this.lbl_l_name_val.Location = new System.Drawing.Point(535, 154);
+            this.lbl_l_name_val.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_l_name_val.Name = "lbl_l_name_val";
-            this.lbl_l_name_val.Size = new System.Drawing.Size(0, 13);
+            this.lbl_l_name_val.Size = new System.Drawing.Size(0, 17);
             this.lbl_l_name_val.TabIndex = 1;
             this.lbl_l_name_val.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbl_rank_val
             // 
             this.lbl_rank_val.AutoSize = true;
-            this.lbl_rank_val.Location = new System.Drawing.Point(408, 172);
+            this.lbl_rank_val.Location = new System.Drawing.Point(544, 212);
+            this.lbl_rank_val.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_rank_val.Name = "lbl_rank_val";
-            this.lbl_rank_val.Size = new System.Drawing.Size(0, 13);
+            this.lbl_rank_val.Size = new System.Drawing.Size(0, 17);
             this.lbl_rank_val.TabIndex = 1;
             // 
             // btn_get_info
             // 
-            this.btn_get_info.Location = new System.Drawing.Point(608, 27);
+            this.btn_get_info.Location = new System.Drawing.Point(811, 33);
+            this.btn_get_info.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_get_info.Name = "btn_get_info";
-            this.btn_get_info.Size = new System.Drawing.Size(75, 23);
+            this.btn_get_info.Size = new System.Drawing.Size(100, 28);
             this.btn_get_info.TabIndex = 3;
             this.btn_get_info.Text = "Get Info";
             this.btn_get_info.UseVisualStyleBackColor = true;
@@ -167,16 +180,19 @@ namespace Court_System
             // data_Judge
             // 
             this.data_Judge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_Judge.Location = new System.Drawing.Point(182, 302);
+            this.data_Judge.Location = new System.Drawing.Point(243, 372);
+            this.data_Judge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.data_Judge.Name = "data_Judge";
-            this.data_Judge.Size = new System.Drawing.Size(645, 253);
+            this.data_Judge.RowHeadersWidth = 51;
+            this.data_Judge.Size = new System.Drawing.Size(860, 311);
             this.data_Judge.TabIndex = 5;
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(58, 30);
+            this.btn_back.Location = new System.Drawing.Point(77, 37);
+            this.btn_back.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(75, 23);
+            this.btn_back.Size = new System.Drawing.Size(100, 28);
             this.btn_back.TabIndex = 6;
             this.btn_back.Text = "back";
             this.btn_back.UseVisualStyleBackColor = true;
@@ -184,9 +200,9 @@ namespace Court_System
             // 
             // Judges
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 603);
+            this.ClientSize = new System.Drawing.Size(1333, 742);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.data_Judge);
             this.Controls.Add(this.btn_get_info);
@@ -202,8 +218,10 @@ namespace Court_System
             this.Controls.Add(this.lbl_f_name);
             this.Controls.Add(this.lbl_JudgeID);
             this.Controls.Add(this.txt_JudgeID);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Judges";
             this.Text = "Judges";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Judges_FormClosing);
             this.Load += new System.EventHandler(this.Judges_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data_Judge)).EndInit();
             this.ResumeLayout(false);

@@ -207,5 +207,21 @@ from PoliceIT
 where PIT_SSN = SSN and password1 = pit_password;
 end;
 
+create or replace PROCEDURE DELETE_CASE
+(CID NUMBER)
+AS
+BEGIN
+  delete from CASES
+  where case_id=CID;
+END DELETE_CASE;
+
+create or replace PROCEDURE GETCASEID
+  (CID out number)
+AS
+BEGIN
+  select max(CASE_ID)
+  into CID
+  from CASES;
+END GETCASEID;
 
 insert into  PoliceIT values(12345678912345,'hamada','hamada123','role1','hamada','helal',NULL,NULL);

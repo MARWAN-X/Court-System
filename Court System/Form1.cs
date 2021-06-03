@@ -70,5 +70,10 @@ namespace Court_System
         {
 
         }
+
+        private void Log_In_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            conn.Dispose();
+        }
     }
 }

@@ -118,6 +118,11 @@ namespace Court_System
             this.Hide();
             menuForm.Show();
         }
+
+        private void Judges_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            conn.Dispose();
+        }
         //12345768912346
     }
 }

@@ -64,5 +64,10 @@ namespace Court_System
             this.Hide();
             menuForm.Show();
         }
+
+        private void Court_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            conn.Dispose();
+        }
     }
 }

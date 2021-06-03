@@ -36,9 +36,10 @@
             // 
             // view_btn
             // 
-            this.view_btn.Location = new System.Drawing.Point(778, 63);
+            this.view_btn.Location = new System.Drawing.Point(1037, 78);
+            this.view_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.view_btn.Name = "view_btn";
-            this.view_btn.Size = new System.Drawing.Size(75, 23);
+            this.view_btn.Size = new System.Drawing.Size(100, 28);
             this.view_btn.TabIndex = 0;
             this.view_btn.Text = "View";
             this.view_btn.UseVisualStyleBackColor = true;
@@ -47,26 +48,29 @@
             // cmb_names
             // 
             this.cmb_names.FormattingEnabled = true;
-            this.cmb_names.Location = new System.Drawing.Point(434, 60);
+            this.cmb_names.Location = new System.Drawing.Point(579, 74);
+            this.cmb_names.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmb_names.Name = "cmb_names";
-            this.cmb_names.Size = new System.Drawing.Size(121, 21);
+            this.cmb_names.Size = new System.Drawing.Size(160, 24);
             this.cmb_names.TabIndex = 1;
             this.cmb_names.SelectedIndexChanged += new System.EventHandler(this.cmb_names_SelectedIndexChanged);
             // 
             // CourtID_lbl
             // 
             this.CourtID_lbl.AutoSize = true;
-            this.CourtID_lbl.Location = new System.Drawing.Point(199, 63);
+            this.CourtID_lbl.Location = new System.Drawing.Point(265, 78);
+            this.CourtID_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CourtID_lbl.Name = "CourtID_lbl";
-            this.CourtID_lbl.Size = new System.Drawing.Size(63, 13);
+            this.CourtID_lbl.Size = new System.Drawing.Size(83, 17);
             this.CourtID_lbl.TabIndex = 2;
             this.CourtID_lbl.Text = "Court Name";
             // 
             // txt_back
             // 
-            this.txt_back.Location = new System.Drawing.Point(12, 53);
+            this.txt_back.Location = new System.Drawing.Point(16, 65);
+            this.txt_back.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_back.Name = "txt_back";
-            this.txt_back.Size = new System.Drawing.Size(75, 23);
+            this.txt_back.Size = new System.Drawing.Size(100, 28);
             this.txt_back.TabIndex = 3;
             this.txt_back.Text = "back";
             this.txt_back.UseVisualStyleBackColor = true;
@@ -74,15 +78,17 @@
             // 
             // Court
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 450);
+            this.ClientSize = new System.Drawing.Size(1427, 554);
             this.Controls.Add(this.txt_back);
             this.Controls.Add(this.CourtID_lbl);
             this.Controls.Add(this.cmb_names);
             this.Controls.Add(this.view_btn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Court";
             this.Text = "Court";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Court_FormClosing);
             this.Load += new System.EventHandler(this.Court_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
