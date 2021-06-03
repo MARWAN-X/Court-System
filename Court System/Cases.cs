@@ -16,12 +16,30 @@ namespace Court_System
     {
         string db = "Data source=orcl; User Id=hr; Password=hr";
         OracleConnection conn;
-        OracleDataAdapter adapter;
-        OracleCommandBuilder builder;
-        DataSet ds;
         public Cases()
         {
             InitializeComponent();
+        }
+
+        private void Cases_Load(object sender, EventArgs e)
+        {
+            conn = new OracleConnection(db);
+            conn.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "select CASE_ID from CASES";
+            cmd.CommandType = CommandType.Text;
+
+            OracleDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cmb_case_id.Items.Add(dr[0]);
+            }
+            dr.Close();
+            cmb_case_status.Items.Add("pending");
+            cmb_case_status.Items.Add("in-progress");
+            cmb_case_status.Items.Add("closed");
         }
 
 
@@ -54,45 +72,38 @@ namespace Court_System
             c1.Parameters.Add("CDATE", case_date.Value);
             c1.Parameters.Add("CROOMNAME", txt_case_room_name.Text);
             c1.ExecuteNonQuery();
-            MessageBox.Show("Case Info inserted successfully");
+            cmb_case_id.Text = String.Empty;
+            txt_case_name.Text = String.Empty;
+            txt_case_description.Text = String.Empty;
+            cmb_case_status.Text = String.Empty;
+            case_date.Value = DateTime.Now;
+            txt_case_room_name.Text = String.Empty;
             cmb_case_id.Items.Add(newID.ToString());
-        }
-
-        private void Cases_Load(object sender, EventArgs e)
-        {
-            conn = new OracleConnection(db);
-            conn.Open();
-
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "select CASE_ID from CASES";
-            cmd.CommandType = CommandType.Text;
-
-            OracleDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                cmb_case_id.Items.Add(dr[0]);
-            }
-            dr.Close();
+            cmb_case_id.SelectedIndex = -1;
+            cmb_case_status.SelectedIndex = -1;
+            MessageBox.Show("Case Info inserted successfully\n your Case ID: " + newID);
         }
 
         private void cmb_case_id_SelectedIndexChanged(object sender, EventArgs e)
         {
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "select CASE_NAME,CASE_DESCRIPTION,CASE_STATUS,CASE_DATE,C_ROOMNAME from CASES where CASE_ID=:id";
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("id", cmb_case_id.SelectedItem.ToString());
-            OracleDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (cmb_case_id.SelectedItem != null)
             {
-                txt_case_name.Text = dr[0].ToString();
-                txt_case_description.Text = dr[1].ToString();
-                cmb_case_status.Text = dr[2].ToString();
-                case_date.Value = Convert.ToDateTime(dr[3].ToString());
-                txt_case_room_name.Text = dr[4].ToString();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "select CASE_NAME,CASE_DESCRIPTION,CASE_STATUS,CASE_DATE,C_ROOMNAME from CASES where CASE_ID=:id";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("id", cmb_case_id.SelectedItem.ToString());
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    txt_case_name.Text = dr[0].ToString();
+                    txt_case_description.Text = dr[1].ToString();
+                    cmb_case_status.Text = dr[2].ToString();
+                    case_date.Value = Convert.ToDateTime(dr[3].ToString());
+                    txt_case_room_name.Text = dr[4].ToString();
+                }
+                dr.Close();
             }
-            dr.Close();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -113,6 +124,7 @@ namespace Court_System
             cmb_case_status.Text = String.Empty;
             case_date.Value = DateTime.Now;
             txt_case_room_name.Text = String.Empty;
+            cmb_case_status.SelectedIndex = -1;
             cmb_case_id.Items.RemoveAt(cmb_case_id.SelectedIndex);
             MessageBox.Show("Delete is done successfully");
         }
@@ -139,6 +151,13 @@ namespace Court_System
         private void Cases_FormClosing(object sender, FormClosingEventArgs e)
         {
             conn.Dispose();
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Menu menuForm = new Menu();
+            this.Hide();
+            menuForm.Show();
         }
     }
 }

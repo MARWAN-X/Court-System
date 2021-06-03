@@ -44,6 +44,7 @@ namespace Court_System
             this.btn_delete = new System.Windows.Forms.Button();
             this.cmb_case_id = new System.Windows.Forms.ComboBox();
             this.case_date = new System.Windows.Forms.DateTimePicker();
+            this.btn_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_case_name
@@ -64,6 +65,7 @@ namespace Court_System
             // 
             // cmb_case_status
             // 
+            this.cmb_case_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_case_status.FormattingEnabled = true;
             this.cmb_case_status.Location = new System.Drawing.Point(377, 210);
             this.cmb_case_status.Margin = new System.Windows.Forms.Padding(4);
@@ -171,6 +173,7 @@ namespace Court_System
             // 
             // cmb_case_id
             // 
+            this.cmb_case_id.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_case_id.FormattingEnabled = true;
             this.cmb_case_id.Location = new System.Drawing.Point(377, 48);
             this.cmb_case_id.Name = "cmb_case_id";
@@ -186,11 +189,22 @@ namespace Court_System
             this.case_date.Size = new System.Drawing.Size(293, 22);
             this.case_date.TabIndex = 9;
             // 
+            // btn_back
+            // 
+            this.btn_back.Location = new System.Drawing.Point(33, 48);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(75, 23);
+            this.btn_back.TabIndex = 17;
+            this.btn_back.Text = "Back";
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // Cases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.cmb_case_id);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_update);
@@ -232,5 +246,6 @@ namespace Court_System
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.ComboBox cmb_case_id;
         private System.Windows.Forms.DateTimePicker case_date;
+        private System.Windows.Forms.Button btn_back;
     }
 }
