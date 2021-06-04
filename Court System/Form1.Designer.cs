@@ -38,8 +38,8 @@ namespace Court_System
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(487, 161);
-            this.txt_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_username.Location = new System.Drawing.Point(543, 184);
+            this.txt_username.Margin = new System.Windows.Forms.Padding(4);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(171, 22);
             this.txt_username.TabIndex = 0;
@@ -47,8 +47,8 @@ namespace Court_System
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(487, 324);
-            this.txt_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_password.Location = new System.Drawing.Point(543, 282);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(4);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(171, 22);
             this.txt_password.TabIndex = 1;
@@ -56,7 +56,7 @@ namespace Court_System
             // lbl_SSN
             // 
             this.lbl_SSN.AutoSize = true;
-            this.lbl_SSN.Location = new System.Drawing.Point(268, 161);
+            this.lbl_SSN.Location = new System.Drawing.Point(345, 198);
             this.lbl_SSN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_SSN.Name = "lbl_SSN";
             this.lbl_SSN.Size = new System.Drawing.Size(36, 17);
@@ -67,7 +67,7 @@ namespace Court_System
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
-            this.lbl_password.Location = new System.Drawing.Point(268, 327);
+            this.lbl_password.Location = new System.Drawing.Point(345, 282);
             this.lbl_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(69, 17);
@@ -76,8 +76,8 @@ namespace Court_System
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(487, 425);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(474, 377);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 4;
@@ -89,13 +89,15 @@ namespace Court_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.BackgroundImage = global::Court_System.Properties.Resources.download;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1082, 553);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_SSN);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_username);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Log_In_Form";
             this.Text = "Log In";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Log_In_Form_FormClosing);

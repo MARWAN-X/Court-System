@@ -14,7 +14,7 @@ namespace Court_System
 {
     public partial class Cases : Form
     {
-        string db = "Data source=orcl; User Id=hr; Password=hr";
+        string db = "Data source=orcl; User Id=hr; Password=HR";
         OracleConnection conn;
         public Cases()
         {
@@ -65,7 +65,7 @@ namespace Court_System
                 emptyy = true;
             if (cmb_case_status.SelectedItem.ToString() == String.Empty)
                 emptyy = true;
-            if (cmb_case_room_name.SelectedValue.ToString() == String.Empty)
+            if (cmb_case_room_name.Text == String.Empty)
                 emptyy = true;
 
             return emptyy;
@@ -99,7 +99,7 @@ namespace Court_System
                 c1.Parameters.Add("CDESC", txt_case_description.Text);
                 c1.Parameters.Add("CSTATUS", cmb_case_status.Text);
                 c1.Parameters.Add("CDATE", case_date.Value);
-                c1.Parameters.Add("CROOMNAME", cmb_case_room_name.SelectedValue.ToString());
+                c1.Parameters.Add("CROOMNAME", cmb_case_room_name.Text);
                 c1.ExecuteNonQuery();
                 cmb_case_id.Text = String.Empty;
                 txt_case_name.Text = String.Empty;

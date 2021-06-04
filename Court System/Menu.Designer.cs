@@ -37,7 +37,7 @@ namespace Court_System
             // btn_Judges
             // 
             this.btn_Judges.Location = new System.Drawing.Point(352, 225);
-            this.btn_Judges.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Judges.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Judges.Name = "btn_Judges";
             this.btn_Judges.Size = new System.Drawing.Size(341, 66);
             this.btn_Judges.TabIndex = 1;
@@ -48,7 +48,7 @@ namespace Court_System
             // btn_court
             // 
             this.btn_court.Location = new System.Drawing.Point(352, 384);
-            this.btn_court.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_court.Margin = new System.Windows.Forms.Padding(4);
             this.btn_court.Name = "btn_court";
             this.btn_court.Size = new System.Drawing.Size(341, 66);
             this.btn_court.TabIndex = 2;
@@ -59,7 +59,7 @@ namespace Court_System
             // btn_Cases
             // 
             this.btn_Cases.Location = new System.Drawing.Point(352, 85);
-            this.btn_Cases.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Cases.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Cases.Name = "btn_Cases";
             this.btn_Cases.Size = new System.Drawing.Size(341, 66);
             this.btn_Cases.TabIndex = 3;
@@ -71,11 +71,13 @@ namespace Court_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.BackgroundImage = global::Court_System.Properties.Resources._4144272;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1082, 553);
             this.Controls.Add(this.btn_Cases);
             this.Controls.Add(this.btn_court);
             this.Controls.Add(this.btn_Judges);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);

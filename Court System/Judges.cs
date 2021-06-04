@@ -13,41 +13,11 @@ namespace Court_System
 {
     public partial class Judges : Form
     {
-        string ordb = "Data source=orcl;User Id=hr; password=hr";
+        string ordb = "Data source=orcl;User Id=hr; password=HR";
         OracleConnection conn;
         public Judges()
         {
             InitializeComponent();
-        }
-
-        private void Judges_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_JudgeID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_get_info_Click(object sender, EventArgs e)
@@ -78,7 +48,7 @@ namespace Court_System
                 MessageBox.Show("Please enter valid SSN");
                 return;
             }
-
+            data_Judge.Show();
             OracleDataReader dr = c.ExecuteReader();
             if (dr.Read())
             {
@@ -122,6 +92,11 @@ namespace Court_System
         private void Judges_FormClosing(object sender, FormClosingEventArgs e)
         {
             conn.Dispose();
+        }
+
+        private void Judges_Load(object sender, EventArgs e)
+        {
+            data_Judge.Hide();
         }
         //12345768912346
     }
