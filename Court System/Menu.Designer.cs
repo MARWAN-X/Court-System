@@ -36,9 +36,10 @@ namespace Court_System
             // 
             // btn_Judges
             // 
-            this.btn_Judges.Location = new System.Drawing.Point(264, 183);
+            this.btn_Judges.Location = new System.Drawing.Point(352, 225);
+            this.btn_Judges.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Judges.Name = "btn_Judges";
-            this.btn_Judges.Size = new System.Drawing.Size(256, 54);
+            this.btn_Judges.Size = new System.Drawing.Size(341, 66);
             this.btn_Judges.TabIndex = 1;
             this.btn_Judges.Text = "Judges";
             this.btn_Judges.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@ namespace Court_System
             // 
             // btn_court
             // 
-            this.btn_court.Location = new System.Drawing.Point(264, 312);
+            this.btn_court.Location = new System.Drawing.Point(352, 384);
+            this.btn_court.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_court.Name = "btn_court";
-            this.btn_court.Size = new System.Drawing.Size(256, 54);
+            this.btn_court.Size = new System.Drawing.Size(341, 66);
             this.btn_court.TabIndex = 2;
             this.btn_court.Text = "Court";
             this.btn_court.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@ namespace Court_System
             // 
             // btn_Cases
             // 
-            this.btn_Cases.Location = new System.Drawing.Point(264, 69);
+            this.btn_Cases.Location = new System.Drawing.Point(352, 85);
+            this.btn_Cases.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Cases.Name = "btn_Cases";
-            this.btn_Cases.Size = new System.Drawing.Size(256, 54);
+            this.btn_Cases.Size = new System.Drawing.Size(341, 66);
             this.btn_Cases.TabIndex = 3;
             this.btn_Cases.Text = "Cases";
             this.btn_Cases.UseVisualStyleBackColor = true;
@@ -66,14 +69,16 @@ namespace Court_System
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btn_Cases);
             this.Controls.Add(this.btn_court);
             this.Controls.Add(this.btn_Judges);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
 
         }

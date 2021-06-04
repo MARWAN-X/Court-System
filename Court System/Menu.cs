@@ -37,5 +37,10 @@ namespace Court_System
             this.Hide();
             courtForm.Show();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

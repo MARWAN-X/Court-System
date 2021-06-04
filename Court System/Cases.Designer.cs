@@ -37,7 +37,6 @@ namespace Court_System
             this.lbl_case_description = new System.Windows.Forms.Label();
             this.lbl_case_status = new System.Windows.Forms.Label();
             this.lbl_case_date = new System.Windows.Forms.Label();
-            this.txt_case_room_name = new System.Windows.Forms.TextBox();
             this.lbl_case_room_name = new System.Windows.Forms.Label();
             this.btn_insert = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@ namespace Court_System
             this.cmb_case_id = new System.Windows.Forms.ComboBox();
             this.case_date = new System.Windows.Forms.DateTimePicker();
             this.btn_back = new System.Windows.Forms.Button();
+            this.cmb_case_room_name = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txt_case_name
@@ -123,23 +123,15 @@ namespace Court_System
             this.lbl_case_date.TabIndex = 10;
             this.lbl_case_date.Text = "Case Date";
             // 
-            // txt_case_room_name
-            // 
-            this.txt_case_room_name.Location = new System.Drawing.Point(377, 353);
-            this.txt_case_room_name.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_case_room_name.Name = "txt_case_room_name";
-            this.txt_case_room_name.Size = new System.Drawing.Size(293, 22);
-            this.txt_case_room_name.TabIndex = 11;
-            // 
             // lbl_case_room_name
             // 
             this.lbl_case_room_name.AutoSize = true;
             this.lbl_case_room_name.Location = new System.Drawing.Point(204, 362);
             this.lbl_case_room_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_case_room_name.Name = "lbl_case_room_name";
-            this.lbl_case_room_name.Size = new System.Drawing.Size(122, 17);
+            this.lbl_case_room_name.Size = new System.Drawing.Size(83, 17);
             this.lbl_case_room_name.TabIndex = 12;
-            this.lbl_case_room_name.Text = "Case Room Name";
+            this.lbl_case_room_name.Text = "Court Name";
             // 
             // btn_insert
             // 
@@ -199,18 +191,27 @@ namespace Court_System
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
+            // cmb_case_room_name
+            // 
+            this.cmb_case_room_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_case_room_name.FormattingEnabled = true;
+            this.cmb_case_room_name.Location = new System.Drawing.Point(377, 362);
+            this.cmb_case_room_name.Name = "cmb_case_room_name";
+            this.cmb_case_room_name.Size = new System.Drawing.Size(293, 24);
+            this.cmb_case_room_name.TabIndex = 18;
+            // 
             // Cases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.cmb_case_room_name);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.cmb_case_id);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_insert);
             this.Controls.Add(this.lbl_case_room_name);
-            this.Controls.Add(this.txt_case_room_name);
             this.Controls.Add(this.lbl_case_date);
             this.Controls.Add(this.case_date);
             this.Controls.Add(this.lbl_case_status);
@@ -239,7 +240,6 @@ namespace Court_System
         private System.Windows.Forms.Label lbl_case_description;
         private System.Windows.Forms.Label lbl_case_status;
         private System.Windows.Forms.Label lbl_case_date;
-        private System.Windows.Forms.TextBox txt_case_room_name;
         private System.Windows.Forms.Label lbl_case_room_name;
         private System.Windows.Forms.Button btn_insert;
         private System.Windows.Forms.Button btn_update;
@@ -247,5 +247,6 @@ namespace Court_System
         private System.Windows.Forms.ComboBox cmb_case_id;
         private System.Windows.Forms.DateTimePicker case_date;
         private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.ComboBox cmb_case_room_name;
     }
 }

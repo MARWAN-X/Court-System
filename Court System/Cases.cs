@@ -40,6 +40,20 @@ namespace Court_System
             cmb_case_status.Items.Add("pending");
             cmb_case_status.Items.Add("in-progress");
             cmb_case_status.Items.Add("closed");
+
+
+            conn = new OracleConnection(db);
+            conn.Open();
+            cmd = new OracleCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "select * from Court";
+            cmd.CommandType = CommandType.Text;
+            OracleDataReader dr2 = cmd.ExecuteReader();
+            while (dr2.Read())
+            {
+                cmb_case_room_name.Items.Add(dr2["C_RoomName"]);
+            }
+            dr2.Close();
         }
 
         private bool check_boxes()
@@ -49,9 +63,9 @@ namespace Court_System
                 emptyy = true;
             if (txt_case_description.Text == String.Empty)
                 emptyy = true;
-            if (cmb_case_status.SelectedItem == String.Empty)
+            if (cmb_case_status.SelectedItem.ToString() == String.Empty)
                 emptyy = true;
-            if (txt_case_room_name.Text == String.Empty)
+            if (cmb_case_room_name.SelectedValue.ToString() == String.Empty)
                 emptyy = true;
 
             return emptyy;
@@ -85,14 +99,14 @@ namespace Court_System
                 c1.Parameters.Add("CDESC", txt_case_description.Text);
                 c1.Parameters.Add("CSTATUS", cmb_case_status.Text);
                 c1.Parameters.Add("CDATE", case_date.Value);
-                c1.Parameters.Add("CROOMNAME", txt_case_room_name.Text);
+                c1.Parameters.Add("CROOMNAME", cmb_case_room_name.SelectedValue.ToString());
                 c1.ExecuteNonQuery();
                 cmb_case_id.Text = String.Empty;
                 txt_case_name.Text = String.Empty;
                 txt_case_description.Text = String.Empty;
                 cmb_case_status.Text = String.Empty;
                 case_date.Value = DateTime.Now;
-                txt_case_room_name.Text = String.Empty;
+                cmb_case_room_name.Text = String.Empty;
                 cmb_case_id.Items.Add(newID.ToString());
                 cmb_case_id.SelectedIndex = -1;
                 cmb_case_status.SelectedIndex = -1;
@@ -120,7 +134,7 @@ namespace Court_System
                     txt_case_description.Text = dr[1].ToString();
                     cmb_case_status.Text = dr[2].ToString();
                     case_date.Value = Convert.ToDateTime(dr[3].ToString());
-                    txt_case_room_name.Text = dr[4].ToString();
+                    cmb_case_room_name.Text = dr[4].ToString();
                 }
                 dr.Close();
             }
@@ -143,7 +157,7 @@ namespace Court_System
             txt_case_description.Text = String.Empty;
             cmb_case_status.Text = String.Empty;
             case_date.Value = DateTime.Now;
-            txt_case_room_name.Text = String.Empty;
+            cmb_case_room_name.Text = String.Empty;
             cmb_case_status.SelectedIndex = -1;
             cmb_case_id.Items.RemoveAt(cmb_case_id.SelectedIndex);
             MessageBox.Show("Delete is done successfully");
@@ -155,9 +169,8 @@ namespace Court_System
             {
                 if (cmb_case_id.SelectedItem != null)
                 {
-                    string constr = "Data source=orcl; User Id=hr; Password=hr";
                     string cmdstr = "select * from CASES where CASE_ID=:cid";
-                    OracleDataAdapter adapter = new OracleDataAdapter(cmdstr, constr);
+                    OracleDataAdapter adapter = new OracleDataAdapter(cmdstr, db);
 
                     adapter.SelectCommand.Parameters.Add("cid", cmb_case_id.SelectedItem.ToString());
                     DataSet ds = new DataSet();
@@ -166,7 +179,7 @@ namespace Court_System
                     ds.Tables[0].Rows[0][2] = txt_case_description.Text;
                     ds.Tables[0].Rows[0][3] = cmb_case_status.Text;
                     ds.Tables[0].Rows[0][4] = case_date.Value;
-                    ds.Tables[0].Rows[0][5] = txt_case_room_name.Text;
+                    ds.Tables[0].Rows[0][5] = cmb_case_room_name.SelectedValue.ToString();
                     OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
                     adapter.Update(ds.Tables[0]);
                     MessageBox.Show("Update is Done Successfully");
@@ -191,5 +204,7 @@ namespace Court_System
             this.Hide();
             menuForm.Show();
         }
+
+       
     }
 }
