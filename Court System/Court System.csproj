@@ -158,5 +158,26 @@
   <ItemGroup>
     <None Include="Resources\photo-1568092806323-8ec13dfa9b92.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\choosePicOne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\choosePicThree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\choosePicTwo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21472161321582518278-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowBackOne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowBackTwo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

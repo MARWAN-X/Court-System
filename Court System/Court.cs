@@ -105,5 +105,12 @@ namespace Court_System
             adapter.Fill(ds);
             data_court.DataSource = ds.Tables[0];
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Menu menuForm = new Menu();
+            this.Hide();
+            menuForm.Show();
+        }
     }
 }

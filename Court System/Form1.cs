@@ -75,5 +75,10 @@ namespace Court_System
         {
             conn.Dispose();
         }
+
+        private void txt_password_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }
