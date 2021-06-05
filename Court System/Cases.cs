@@ -14,7 +14,7 @@ namespace Court_System
 {
     public partial class Cases : Form
     {
-        string db = "Data source=orcl; User Id=hr; Password=HR";
+        string db = "Data source=orcl; User Id=hr; Password=hr";
         OracleConnection conn;
         public Cases()
         {

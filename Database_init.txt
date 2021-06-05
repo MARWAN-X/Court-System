@@ -80,61 +80,43 @@ CREATE TABLE Judging
 	CONSTRAINT PK_Judging PRIMARY KEY (Judging_Case_ID, Judging_J_SSN)
 );
 
-CREATE TABLE Senteced
-(
-	Senteced_Pri_SSN number(14) NOT NULL,
-	Senteced_Case_ID int NOT NULL,
-  
-	CONSTRAINT FK_Senteced_Pri_SSN FOREIGN KEY (Senteced_Pri_SSN)
-	REFERENCES Prisoners(Pri_SSN),
-  
-	CONSTRAINT FK_Senteced_Case_ID FOREIGN KEY (Senteced_Case_ID)
-	REFERENCES CASES(Case_ID),
-  
-	CONSTRAINT PK_Senteced PRIMARY KEY (Senteced_Case_ID, Senteced_Pri_SSN)
-);
-
 CREATE TABLE Defends
 (
-	Defends_Pri_SSN number(14) NOT NULL ,
-	Defends_L_SSN number(14) NOT NULL,
-  
-	CONSTRAINT FK_Defends_Pri_SSN FOREIGN KEY (Defends_Pri_SSN)
-	REFERENCES Prisoners(Pri_SSN),
-  
-	CONSTRAINT FK_Defends_L_SSN FOREIGN KEY (Defends_L_SSN)
-	REFERENCES Lawyers(L_SSN),
-  
-	CONSTRAINT PK_Defends PRIMARY KEY (Defends_Pri_SSN, Defends_L_SSN)
+    Defends_Pri_SSN number(14) NOT NULL ,
+    Defends_L_SSN number(14) NOT NULL,
+    Defends_Case_ID int NOT NULL,
+
+    CONSTRAINT FK_Defends_Pri_SSN FOREIGN KEY (Defends_Pri_SSN)
+    REFERENCES Prisoners(Pri_SSN),
+
+    CONSTRAINT FK_Defends_L_SSN FOREIGN KEY (Defends_L_SSN)
+    REFERENCES Lawyers(L_SSN),
+
+    CONSTRAINT FK_Defends_Case_ID FOREIGN KEY (Defends_Case_ID)
+    REFERENCES Cases(Case_ID),
+
+    CONSTRAINT PK_Defends PRIMARY KEY (Defends_Pri_SSN, Defends_L_SSN, Defends_Case_ID)
 );
 
 CREATE TABLE Represent
 (
-	Represent_V_SSN number(14) NOT NULL,
-	Represent_L_SSN number(14) NOT NULL,
-	
-	CONSTRAINT FK_Represent_V_SSN FOREIGN KEY (Represent_V_SSN)
-	REFERENCES Victims(V_SSN),
-	
-	CONSTRAINT FK_Represent_L_SSN FOREIGN KEY (Represent_L_SSN)
-	REFERENCES Lawyers(L_SSN),
+    Represent_V_SSN number(14) NOT NULL,
+    Represent_L_SSN number(14) NOT NULL,
+    Represent_Case_ID int NOT NULL,
 
-	CONSTRAINT PK_Represent PRIMARY KEY (Represent_L_SSN, Represent_V_SSN)
+    CONSTRAINT FK_Represent_V_SSN FOREIGN KEY (Represent_V_SSN)
+    REFERENCES Victims(V_SSN),
+
+    CONSTRAINT FK_Represent_L_SSN FOREIGN KEY (Represent_L_SSN)
+    REFERENCES Lawyers(L_SSN),
+
+    CONSTRAINT FK_Represent_Case_ID FOREIGN KEY (Represent_Case_ID)
+    REFERENCES Cases(Case_ID),
+
+    CONSTRAINT PK_Represent PRIMARY KEY (Represent_L_SSN, Represent_V_SSN, Represent_Case_ID)
 );
 
-CREATE TABLE Pleading
-(
-	Pleading_Case_ID number(14) NOT NULL,
-	Pleading_L_SSN number(14) NOT NULL,
-
-	CONSTRAINT FK_Pleading_Case_ID FOREIGN KEY (Pleading_Case_ID)
-	REFERENCES Cases(Case_ID),
-
-	CONSTRAINT FK_Pleading_L_SSN FOREIGN KEY (Pleading_L_SSN)
-	REFERENCES Lawyers(L_SSN),
-
-	CONSTRAINT PK_Pleading PRIMARY KEY (Pleading_L_SSN , Pleading_Case_ID)
-);
+ALTER TABLE cases ADD FOREIGN KEY (c_roomname) REFERENCES court(c_roomname);
 
 CREATE TABLE Family_PhoneNO
 (
@@ -225,3 +207,9 @@ BEGIN
 END GETCASEID;
 
 insert into  PoliceIT values(12345678912345,'hamada','hamada123','role1','hamada','helal',NULL,NULL);
+insert into victims values(54082665460365,'yasser','galal', NULL, NULL);
+insert into prisoners values(41813419539224 ,'ramez','galal', NULL, NULL,NULL);
+insert into lawyers values(17887010597055,'mohamed','henedy', NULL, NULL);
+insert into lawyers values(92572333458057,'ibrahem','alabyad', NULL, NULL);
+insert into defends values(41813419539224,17887010597055,1);
+insert into represent values(54082665460365,92572333458057,1);

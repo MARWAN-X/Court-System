@@ -42,5 +42,13 @@ namespace Court_System
         {
 
         }
+
+        private void btn_report_Click(object sender, EventArgs e)
+        {
+            Report_form rf = new Report_form();
+            this.Hide();
+            rf.Show();
+
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace Court_System
     public partial class Court : Form
     {
 
-        string db = "Data source=orcl;User Id=hr; password=HR";
+        string db = "Data source=orcl;User Id=hr; password=hr";
         OracleConnection conn;
         OracleDataAdapter adapter;
         DataSet ds;

@@ -13,7 +13,7 @@ namespace Court_System
 {
     public partial class Judges : Form
     {
-        string ordb = "Data source=orcl;User Id=hr; password=HR";
+        string ordb = "Data source=orcl;User Id=hr; password=hr";
         OracleConnection conn;
         public Judges()
         {
