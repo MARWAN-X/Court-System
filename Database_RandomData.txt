@@ -1,0 +1,63 @@
+INSERT INTO Judges
+VALUES
+(12345768912346,'rank1','ahmed','mohamed','01-AUG-61',01112315678);
+
+INSERT INTO Judges
+VALUES
+(12345768912326,'rank2','tamer','ahmed','01-SEP-64',011127415678);
+
+INSERT INTO Judges
+VALUES
+(12345768912376,'rank3','fawzy','marwan','01-JUN-62',011123154128);
+
+INSERT INTO Judges
+VALUES
+(12345768912746,'rank4','mohsen','yassen','01-AUG-51',01112315658);
+
+INSERT INTO Court
+VALUES
+('saeed abdelwahaab','cairo','algabrty',50);
+
+INSERT INTO Cases
+VALUES
+(1,'copyrights','www.google.com','pending','01-AUG-05','saeed abdelwahaab');
+
+INSERT INTO Cases
+VALUES
+(2,'murder','www.google.com','finished','01-AUG-20','saeed abdelwahaab');
+
+INSERT INTO Judging
+VALUES
+(12345768912346,1);
+
+INSERT INTO Judging
+VALUES
+(12345768912346, 2);
+
+INSERT INTO PoliceIT 
+VALUES
+(12345678912345,'hamada','hamada123','role1','hamada','helal', NULL, NULL);
+
+INSERT INTO Victims 
+VALUES
+(54082665460365,'yasser','galal', NULL, NULL);
+
+INSERT INTO Prisoners 
+VALUES
+(41813419539224 ,'ramez','galal', NULL, NULL,NULL);
+
+INSERT INTO Lawyers 
+VALUES
+(17887010597055,'mohamed','henedy', NULL, NULL);
+
+INSERT INTO Lawyers 
+VALUES
+(92572333458057,'ibrahem','alabyad', NULL, NULL);
+
+INSERT INTO Defends 
+VALUES
+(41813419539224, 17887010597055, 1);
+
+INSERT INTO Represent 
+VALUES
+(54082665460365, 92572333458057, 1);

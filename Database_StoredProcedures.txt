@@ -1,0 +1,39 @@
+create or replace procedure get_cases
+(J_ID in NUMBER, CID out sys_refcursor)
+AS
+BEGIN
+	open CID for
+	select * FROM cases 
+	where cases.case_id in (SELECT Judging_case_id FROM judging 
+                        	where judging_j_ssn = J_ID);
+end;
+
+
+create or replace procedure login
+(SSN in Number, Password1 in varchar2,ret out NUMBER)
+AS
+BEGIN
+	select count(*) 
+	into ret
+	from PoliceIT
+	where PIT_SSN = SSN and password1 = pit_password;
+end;
+
+
+create or replace PROCEDURE DELETE_CASE
+(CID NUMBER)
+AS
+BEGIN
+	delete from CASES
+	where case_id=CID;
+END DELETE_CASE;
+
+
+create or replace PROCEDURE GETCASEID
+(CID out number)
+AS
+BEGIN
+	select max(CASE_ID)
+	into CID
+	from CASES;
+END GETCASEID;

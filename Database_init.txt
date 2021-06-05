@@ -66,6 +66,8 @@ CREATE TABLE Cases
 	C_Roomname varchar(255) NOT NULL
 );
 
+ALTER TABLE cases ADD FOREIGN KEY (c_roomname) REFERENCES court(c_roomname);
+
 CREATE TABLE Judging
 (
 	Judging_J_SSN number(14) NOT NULL,
@@ -82,41 +84,39 @@ CREATE TABLE Judging
 
 CREATE TABLE Defends
 (
-    Defends_Pri_SSN number(14) NOT NULL ,
-    Defends_L_SSN number(14) NOT NULL,
-    Defends_Case_ID int NOT NULL,
+	Defends_Pri_SSN number(14) NOT NULL ,
+	Defends_L_SSN number(14) NOT NULL,
+	Defends_Case_ID int NOT NULL,
 
-    CONSTRAINT FK_Defends_Pri_SSN FOREIGN KEY (Defends_Pri_SSN)
-    REFERENCES Prisoners(Pri_SSN),
+	CONSTRAINT FK_Defends_Pri_SSN FOREIGN KEY (Defends_Pri_SSN)
+	REFERENCES Prisoners(Pri_SSN),
 
-    CONSTRAINT FK_Defends_L_SSN FOREIGN KEY (Defends_L_SSN)
-    REFERENCES Lawyers(L_SSN),
+	CONSTRAINT FK_Defends_L_SSN FOREIGN KEY (Defends_L_SSN)
+	REFERENCES Lawyers(L_SSN),
 
-    CONSTRAINT FK_Defends_Case_ID FOREIGN KEY (Defends_Case_ID)
-    REFERENCES Cases(Case_ID),
+	CONSTRAINT FK_Defends_Case_ID FOREIGN KEY (Defends_Case_ID)
+	REFERENCES Cases(Case_ID),
 
-    CONSTRAINT PK_Defends PRIMARY KEY (Defends_Pri_SSN, Defends_L_SSN, Defends_Case_ID)
+	CONSTRAINT PK_Defends PRIMARY KEY (Defends_Pri_SSN, Defends_L_SSN, Defends_Case_ID)
 );
 
 CREATE TABLE Represent
 (
-    Represent_V_SSN number(14) NOT NULL,
-    Represent_L_SSN number(14) NOT NULL,
-    Represent_Case_ID int NOT NULL,
+	Represent_V_SSN number(14) NOT NULL,
+	Represent_L_SSN number(14) NOT NULL,
+	Represent_Case_ID int NOT NULL,
 
-    CONSTRAINT FK_Represent_V_SSN FOREIGN KEY (Represent_V_SSN)
-    REFERENCES Victims(V_SSN),
+	CONSTRAINT FK_Represent_V_SSN FOREIGN KEY (Represent_V_SSN)
+	REFERENCES Victims(V_SSN),
 
-    CONSTRAINT FK_Represent_L_SSN FOREIGN KEY (Represent_L_SSN)
-    REFERENCES Lawyers(L_SSN),
+	CONSTRAINT FK_Represent_L_SSN FOREIGN KEY (Represent_L_SSN)
+	REFERENCES Lawyers(L_SSN),
 
-    CONSTRAINT FK_Represent_Case_ID FOREIGN KEY (Represent_Case_ID)
-    REFERENCES Cases(Case_ID),
+	CONSTRAINT FK_Represent_Case_ID FOREIGN KEY (Represent_Case_ID)
+	REFERENCES Cases(Case_ID),
 
-    CONSTRAINT PK_Represent PRIMARY KEY (Represent_L_SSN, Represent_V_SSN, Represent_Case_ID)
+	CONSTRAINT PK_Represent PRIMARY KEY (Represent_L_SSN, Represent_V_SSN, Represent_Case_ID)
 );
-
-ALTER TABLE cases ADD FOREIGN KEY (c_roomname) REFERENCES court(c_roomname);
 
 CREATE TABLE Family_PhoneNO
 (
@@ -128,88 +128,3 @@ CREATE TABLE Family_PhoneNO
 
 	CONSTRAINT PK_Family_PhoneNO PRIMARY KEY (Pri_SSN, Family_PhoneNO)
 );
-
-
-
-
-INSERT INTO Judges
-VALUES
-(12345768912346,'rank1','ahmed','mohamed','01-AUG-61',01112315678);
-
-INSERT INTO Judges
-VALUES
-(12345768912326,'rank2','tamer','ahmed','01-SEP-64',011127415678);
-
-INSERT INTO Judges
-VALUES
-(12345768912376,'rank3','fawzy','marwan','01-JUN-62',011123154128);
-
-INSERT INTO Judges
-VALUES
-(12345768912746,'rank4','mohsen','yassen','01-AUG-51',01112315658);
-
-INSERT INTO Court
-VALUES
-('saeed abdelwahaab','cairo','algabrty',50);
-
-INSERT INTO Cases
-VALUES
-(1,'copyrights','www.google.com','pending','01-AUG-05','saeed abdelwahaab');
-
-INSERT INTO Cases
-VALUES
-(2,'murder','www.google.com','finished','01-AUG-20','saeed abdelwahaab');
-
-INSERT INTO judging
-values
-(12345768912346,1);
-
-INSERT INTO judging
-values
-(12345768912346, 2);
-
-create or replace procedure get_cases
-(J_ID in NUMBER, CID out sys_refcursor)
-as
-BEGIN
-open CID for
-select * FROM cases 
-where cases.case_id in (SELECT Judging_case_id FROM judging 
-                        where judging_j_ssn = J_ID);
-end;
-
-
-create or replace procedure login
-(SSN in Number, Password1 in varchar2,ret out NUMBER)
-as
-BEGIN
-select count(*) 
-into ret
-from PoliceIT
-where PIT_SSN = SSN and password1 = pit_password;
-end;
-
-create or replace PROCEDURE DELETE_CASE
-(CID NUMBER)
-AS
-BEGIN
-  delete from CASES
-  where case_id=CID;
-END DELETE_CASE;
-
-create or replace PROCEDURE GETCASEID
-  (CID out number)
-AS
-BEGIN
-  select max(CASE_ID)
-  into CID
-  from CASES;
-END GETCASEID;
-
-insert into  PoliceIT values(12345678912345,'hamada','hamada123','role1','hamada','helal',NULL,NULL);
-insert into victims values(54082665460365,'yasser','galal', NULL, NULL);
-insert into prisoners values(41813419539224 ,'ramez','galal', NULL, NULL,NULL);
-insert into lawyers values(17887010597055,'mohamed','henedy', NULL, NULL);
-insert into lawyers values(92572333458057,'ibrahem','alabyad', NULL, NULL);
-insert into defends values(41813419539224,17887010597055,1);
-insert into represent values(54082665460365,92572333458057,1);
