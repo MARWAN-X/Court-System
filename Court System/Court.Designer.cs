@@ -43,10 +43,9 @@
             // 
             this.cmb_names.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_names.FormattingEnabled = true;
-            this.cmb_names.Location = new System.Drawing.Point(460, 124);
-            this.cmb_names.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_names.Location = new System.Drawing.Point(345, 101);
             this.cmb_names.Name = "cmb_names";
-            this.cmb_names.Size = new System.Drawing.Size(160, 24);
+            this.cmb_names.Size = new System.Drawing.Size(121, 21);
             this.cmb_names.TabIndex = 1;
             this.cmb_names.SelectedIndexChanged += new System.EventHandler(this.cmb_names_SelectedIndexChanged);
             // 
@@ -54,11 +53,12 @@
             // 
             this.data_court.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.data_court.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_court.Location = new System.Drawing.Point(45, 226);
+            this.data_court.Location = new System.Drawing.Point(34, 184);
+            this.data_court.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.data_court.Name = "data_court";
             this.data_court.RowHeadersWidth = 51;
             this.data_court.RowTemplate.Height = 24;
-            this.data_court.Size = new System.Drawing.Size(849, 315);
+            this.data_court.Size = new System.Drawing.Size(637, 256);
             this.data_court.TabIndex = 4;
             // 
             // cmb_search
@@ -67,9 +67,10 @@
             this.cmb_search.Items.AddRange(new object[] {
             "Court Name",
             "Case Date"});
-            this.cmb_search.Location = new System.Drawing.Point(140, 124);
+            this.cmb_search.Location = new System.Drawing.Point(105, 101);
+            this.cmb_search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_search.Name = "cmb_search";
-            this.cmb_search.Size = new System.Drawing.Size(152, 24);
+            this.cmb_search.Size = new System.Drawing.Size(115, 21);
             this.cmb_search.TabIndex = 5;
             this.cmb_search.SelectedIndexChanged += new System.EventHandler(this.cmb_search_SelectedIndexChanged);
             // 
@@ -77,18 +78,18 @@
             // 
             this.lbl_search.AutoSize = true;
             this.lbl_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_search.Location = new System.Drawing.Point(138, 86);
+            this.lbl_search.Location = new System.Drawing.Point(104, 70);
+            this.lbl_search.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_search.Name = "lbl_search";
-            this.lbl_search.Size = new System.Drawing.Size(99, 20);
+            this.lbl_search.Size = new System.Drawing.Size(86, 17);
             this.lbl_search.TabIndex = 6;
             this.lbl_search.Text = "Search by:";
             // 
             // case_date_search
             // 
-            this.case_date_search.Location = new System.Drawing.Point(327, 126);
-            this.case_date_search.Margin = new System.Windows.Forms.Padding(4);
+            this.case_date_search.Location = new System.Drawing.Point(245, 102);
             this.case_date_search.Name = "case_date_search";
-            this.case_date_search.Size = new System.Drawing.Size(293, 22);
+            this.case_date_search.Size = new System.Drawing.Size(221, 20);
             this.case_date_search.TabIndex = 10;
             // 
             // btn_view
@@ -96,9 +97,10 @@
             this.btn_view.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_view.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_view.Location = new System.Drawing.Point(675, 116);
+            this.btn_view.Location = new System.Drawing.Point(506, 94);
+            this.btn_view.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_view.Name = "btn_view";
-            this.btn_view.Size = new System.Drawing.Size(75, 37);
+            this.btn_view.Size = new System.Drawing.Size(56, 30);
             this.btn_view.TabIndex = 11;
             this.btn_view.Text = "View";
             this.btn_view.UseVisualStyleBackColor = false;
@@ -107,9 +109,10 @@
             // pictureBoxBack
             // 
             this.pictureBoxBack.Image = global::Court_System.Properties.Resources.arrowBackTwo;
-            this.pictureBoxBack.Location = new System.Drawing.Point(22, 24);
+            this.pictureBoxBack.Location = new System.Drawing.Point(16, 20);
+            this.pictureBoxBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxBack.Name = "pictureBoxBack";
-            this.pictureBoxBack.Size = new System.Drawing.Size(50, 48);
+            this.pictureBoxBack.Size = new System.Drawing.Size(38, 39);
             this.pictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBack.TabIndex = 12;
             this.pictureBoxBack.TabStop = false;
@@ -117,11 +120,11 @@
             // 
             // Court
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(942, 564);
+            this.ClientSize = new System.Drawing.Size(706, 458);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.btn_view);
             this.Controls.Add(this.case_date_search);
@@ -129,7 +132,6 @@
             this.Controls.Add(this.cmb_search);
             this.Controls.Add(this.data_court);
             this.Controls.Add(this.cmb_names);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Court";
             this.Text = "Court";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Court_FormClosing);

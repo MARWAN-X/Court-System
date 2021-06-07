@@ -98,6 +98,31 @@ namespace Court_System
         {
             data_Judge.Hide();
         }
+
+        private void lbl_birthdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_rank_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_phoneNo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_JudgeID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void data_Judge_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         //12345768912346
     }
 }
