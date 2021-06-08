@@ -88,7 +88,8 @@ namespace Court_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1567, 657);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1567, 654);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.crystalReportViewer);

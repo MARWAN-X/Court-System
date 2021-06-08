@@ -24,8 +24,18 @@ create or replace PROCEDURE DELETE_CASE
 (CID NUMBER)
 AS
 BEGIN
-	delete from CASES
-	where case_id=CID;
+  	delete from defends 
+  	where DEFENDS_CASE_ID= cid;
+
+  	delete from represent 
+  	where represent_case_id= cid;
+
+ 	delete from judging
+  	where cid = judging_case_id;
+
+  	delete from CASES
+  	where case_id=CID;
+
 END DELETE_CASE;
 
 

@@ -54,6 +54,7 @@ namespace Court_System
             this.txt_JudgeID.Name = "txt_JudgeID";
             this.txt_JudgeID.Size = new System.Drawing.Size(147, 20);
             this.txt_JudgeID.TabIndex = 0;
+            this.txt_JudgeID.TextChanged += new System.EventHandler(this.txt_JudgeID_TextChanged);
             // 
             // lbl_JudgeID
             // 
@@ -128,7 +129,7 @@ namespace Court_System
             this.lbl_birthdate_val.Name = "lbl_birthdate_val";
             this.lbl_birthdate_val.Size = new System.Drawing.Size(55, 13);
             this.lbl_birthdate_val.TabIndex = 1;
-            this.lbl_birthdate_val.Text = "toka ehab";
+            this.lbl_birthdate_val.Text = "";
             // 
             // lbl_phoneNumber_val
             // 
@@ -138,7 +139,7 @@ namespace Court_System
             this.lbl_phoneNumber_val.Name = "lbl_phoneNumber_val";
             this.lbl_phoneNumber_val.Size = new System.Drawing.Size(55, 13);
             this.lbl_phoneNumber_val.TabIndex = 1;
-            this.lbl_phoneNumber_val.Text = "toka ehab";
+            this.lbl_phoneNumber_val.Text = "";
             // 
             // lbl_f_name_val
             // 
@@ -150,7 +151,7 @@ namespace Court_System
             this.lbl_f_name_val.Name = "lbl_f_name_val";
             this.lbl_f_name_val.Size = new System.Drawing.Size(55, 13);
             this.lbl_f_name_val.TabIndex = 1;
-            this.lbl_f_name_val.Text = "toka ehab";
+            this.lbl_f_name_val.Text = "";
             // 
             // lbl_l_name_val
             // 
@@ -161,7 +162,7 @@ namespace Court_System
             this.lbl_l_name_val.Name = "lbl_l_name_val";
             this.lbl_l_name_val.Size = new System.Drawing.Size(55, 13);
             this.lbl_l_name_val.TabIndex = 1;
-            this.lbl_l_name_val.Text = "toka ehab";
+            this.lbl_l_name_val.Text = ";
             // 
             // lbl_rank_val
             // 
@@ -172,7 +173,7 @@ namespace Court_System
             this.lbl_rank_val.Name = "lbl_rank_val";
             this.lbl_rank_val.Size = new System.Drawing.Size(55, 13);
             this.lbl_rank_val.TabIndex = 1;
-            this.lbl_rank_val.Text = "toka ehab";
+            this.lbl_rank_val.Text = "";
             // 
             // btn_get_info
             // 

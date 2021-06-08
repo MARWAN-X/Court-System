@@ -120,6 +120,7 @@ namespace Court_System
         }
 
         private void data_Judge_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txt_JudgeID_TextChanged(object sender, EventArgs e)
         {
 
         }
