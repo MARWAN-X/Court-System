@@ -43,7 +43,6 @@ namespace Court_System
             this.btn_delete = new System.Windows.Forms.Button();
             this.cmb_case_id = new System.Windows.Forms.ComboBox();
             this.case_date = new System.Windows.Forms.DateTimePicker();
-            this.btn_back = new System.Windows.Forms.Button();
             this.cmb_case_room_name = new System.Windows.Forms.ComboBox();
             this.lbl_judge_id = new System.Windows.Forms.Label();
             this.lbl_victim_id = new System.Windows.Forms.Label();
@@ -61,18 +60,20 @@ namespace Court_System
             this.btn_Prisoner_lawyer = new System.Windows.Forms.Button();
             this.btn_Finish = new System.Windows.Forms.Button();
             this.btn_Victim_id = new System.Windows.Forms.Button();
+            this.pictureBoxBack = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_case_name
             // 
-            this.txt_case_name.Location = new System.Drawing.Point(350, 80);
+            this.txt_case_name.Location = new System.Drawing.Point(407, 97);
             this.txt_case_name.Name = "txt_case_name";
             this.txt_case_name.Size = new System.Drawing.Size(221, 20);
             this.txt_case_name.TabIndex = 2;
             // 
             // txt_case_description
             // 
-            this.txt_case_description.Location = new System.Drawing.Point(350, 122);
+            this.txt_case_description.Location = new System.Drawing.Point(407, 140);
             this.txt_case_description.Name = "txt_case_description";
             this.txt_case_description.Size = new System.Drawing.Size(221, 20);
             this.txt_case_description.TabIndex = 3;
@@ -81,7 +82,7 @@ namespace Court_System
             // 
             this.cmb_case_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_case_status.FormattingEnabled = true;
-            this.cmb_case_status.Location = new System.Drawing.Point(350, 172);
+            this.cmb_case_status.Location = new System.Drawing.Point(407, 178);
             this.cmb_case_status.Name = "cmb_case_status";
             this.cmb_case_status.Size = new System.Drawing.Size(221, 21);
             this.cmb_case_status.TabIndex = 4;
@@ -89,95 +90,110 @@ namespace Court_System
             // lbl_case_id
             // 
             this.lbl_case_id.AutoSize = true;
-            this.lbl_case_id.Location = new System.Drawing.Point(220, 46);
+            this.lbl_case_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_case_id.Location = new System.Drawing.Point(258, 64);
             this.lbl_case_id.Name = "lbl_case_id";
-            this.lbl_case_id.Size = new System.Drawing.Size(45, 13);
+            this.lbl_case_id.Size = new System.Drawing.Size(63, 16);
             this.lbl_case_id.TabIndex = 5;
             this.lbl_case_id.Text = "Case ID";
             // 
             // lbl_case_name
             // 
             this.lbl_case_name.AutoSize = true;
-            this.lbl_case_name.Location = new System.Drawing.Point(220, 88);
+            this.lbl_case_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_case_name.Location = new System.Drawing.Point(258, 101);
             this.lbl_case_name.Name = "lbl_case_name";
-            this.lbl_case_name.Size = new System.Drawing.Size(62, 13);
+            this.lbl_case_name.Size = new System.Drawing.Size(89, 16);
             this.lbl_case_name.TabIndex = 6;
             this.lbl_case_name.Text = "Case Name";
+            this.lbl_case_name.Click += new System.EventHandler(this.lbl_case_name_Click);
             // 
             // lbl_case_description
             // 
             this.lbl_case_description.AutoSize = true;
-            this.lbl_case_description.Location = new System.Drawing.Point(220, 128);
+            this.lbl_case_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_case_description.Location = new System.Drawing.Point(258, 141);
             this.lbl_case_description.Name = "lbl_case_description";
-            this.lbl_case_description.Size = new System.Drawing.Size(87, 13);
+            this.lbl_case_description.Size = new System.Drawing.Size(127, 16);
             this.lbl_case_description.TabIndex = 7;
             this.lbl_case_description.Text = "Case Description";
+            this.lbl_case_description.Click += new System.EventHandler(this.lbl_case_description_Click);
             // 
             // lbl_case_status
             // 
             this.lbl_case_status.AutoSize = true;
-            this.lbl_case_status.Location = new System.Drawing.Point(220, 180);
+            this.lbl_case_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_case_status.Location = new System.Drawing.Point(258, 183);
             this.lbl_case_status.Name = "lbl_case_status";
-            this.lbl_case_status.Size = new System.Drawing.Size(64, 13);
+            this.lbl_case_status.Size = new System.Drawing.Size(91, 16);
             this.lbl_case_status.TabIndex = 8;
             this.lbl_case_status.Text = "Case Status";
             // 
             // lbl_case_date
             // 
             this.lbl_case_date.AutoSize = true;
-            this.lbl_case_date.Location = new System.Drawing.Point(220, 240);
+            this.lbl_case_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_case_date.Location = new System.Drawing.Point(258, 225);
             this.lbl_case_date.Name = "lbl_case_date";
-            this.lbl_case_date.Size = new System.Drawing.Size(57, 13);
+            this.lbl_case_date.Size = new System.Drawing.Size(81, 16);
             this.lbl_case_date.TabIndex = 10;
             this.lbl_case_date.Text = "Case Date";
             // 
             // lbl_case_room_name
             // 
             this.lbl_case_room_name.AutoSize = true;
-            this.lbl_case_room_name.Location = new System.Drawing.Point(220, 296);
+            this.lbl_case_room_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_case_room_name.Location = new System.Drawing.Point(258, 259);
             this.lbl_case_room_name.Name = "lbl_case_room_name";
-            this.lbl_case_room_name.Size = new System.Drawing.Size(63, 13);
+            this.lbl_case_room_name.Size = new System.Drawing.Size(89, 16);
             this.lbl_case_room_name.TabIndex = 12;
             this.lbl_case_room_name.Text = "Court Name";
             // 
             // btn_insert
             // 
-            this.btn_insert.Location = new System.Drawing.Point(286, 342);
+            this.btn_insert.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_insert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_insert.Location = new System.Drawing.Point(212, 342);
             this.btn_insert.Margin = new System.Windows.Forms.Padding(2);
             this.btn_insert.Name = "btn_insert";
-            this.btn_insert.Size = new System.Drawing.Size(56, 19);
+            this.btn_insert.Size = new System.Drawing.Size(69, 28);
             this.btn_insert.TabIndex = 13;
             this.btn_insert.Text = "Insert";
-            this.btn_insert.UseVisualStyleBackColor = true;
+            this.btn_insert.UseVisualStyleBackColor = false;
             this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
             // btn_update
             // 
-            this.btn_update.Location = new System.Drawing.Point(431, 342);
+            this.btn_update.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update.Location = new System.Drawing.Point(353, 342);
             this.btn_update.Margin = new System.Windows.Forms.Padding(2);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(56, 19);
+            this.btn_update.Size = new System.Drawing.Size(73, 28);
             this.btn_update.TabIndex = 14;
-            this.btn_update.Text = "update";
-            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(569, 342);
+            this.btn_delete.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.Location = new System.Drawing.Point(500, 342);
             this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(56, 19);
+            this.btn_delete.Size = new System.Drawing.Size(67, 28);
             this.btn_delete.TabIndex = 15;
-            this.btn_delete.Text = "delete";
-            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // cmb_case_id
             // 
+            this.cmb_case_id.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cmb_case_id.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_case_id.FormattingEnabled = true;
-            this.cmb_case_id.Location = new System.Drawing.Point(350, 41);
+            this.cmb_case_id.Location = new System.Drawing.Point(407, 59);
             this.cmb_case_id.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_case_id.Name = "cmb_case_id";
             this.cmb_case_id.Size = new System.Drawing.Size(221, 21);
@@ -186,27 +202,16 @@ namespace Court_System
             // 
             // case_date
             // 
-            this.case_date.Location = new System.Drawing.Point(350, 234);
+            this.case_date.Location = new System.Drawing.Point(407, 221);
             this.case_date.Name = "case_date";
             this.case_date.Size = new System.Drawing.Size(221, 20);
             this.case_date.TabIndex = 9;
-            // 
-            // btn_back
-            // 
-            this.btn_back.Location = new System.Drawing.Point(9, 10);
-            this.btn_back.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(76, 24);
-            this.btn_back.TabIndex = 17;
-            this.btn_back.Text = "Back";
-            this.btn_back.UseVisualStyleBackColor = true;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // cmb_case_room_name
             // 
             this.cmb_case_room_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_case_room_name.FormattingEnabled = true;
-            this.cmb_case_room_name.Location = new System.Drawing.Point(350, 296);
+            this.cmb_case_room_name.Location = new System.Drawing.Point(407, 254);
             this.cmb_case_room_name.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_case_room_name.Name = "cmb_case_room_name";
             this.cmb_case_room_name.Size = new System.Drawing.Size(221, 21);
@@ -215,65 +220,70 @@ namespace Court_System
             // lbl_judge_id
             // 
             this.lbl_judge_id.AutoSize = true;
-            this.lbl_judge_id.Location = new System.Drawing.Point(12, 61);
+            this.lbl_judge_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_judge_id.Location = new System.Drawing.Point(11, 64);
             this.lbl_judge_id.Name = "lbl_judge_id";
-            this.lbl_judge_id.Size = new System.Drawing.Size(50, 13);
+            this.lbl_judge_id.Size = new System.Drawing.Size(70, 16);
             this.lbl_judge_id.TabIndex = 20;
             this.lbl_judge_id.Text = "Judge ID";
             // 
             // lbl_victim_id
             // 
             this.lbl_victim_id.AutoSize = true;
-            this.lbl_victim_id.Location = new System.Drawing.Point(12, 88);
+            this.lbl_victim_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_victim_id.Location = new System.Drawing.Point(12, 108);
             this.lbl_victim_id.Name = "lbl_victim_id";
-            this.lbl_victim_id.Size = new System.Drawing.Size(49, 13);
+            this.lbl_victim_id.Size = new System.Drawing.Size(69, 16);
             this.lbl_victim_id.TabIndex = 21;
             this.lbl_victim_id.Text = "Victim ID";
             // 
             // lbl_Prisoner_id
             // 
             this.lbl_Prisoner_id.AutoSize = true;
-            this.lbl_Prisoner_id.Location = new System.Drawing.Point(12, 122);
+            this.lbl_Prisoner_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Prisoner_id.Location = new System.Drawing.Point(11, 155);
             this.lbl_Prisoner_id.Name = "lbl_Prisoner_id";
-            this.lbl_Prisoner_id.Size = new System.Drawing.Size(59, 13);
+            this.lbl_Prisoner_id.Size = new System.Drawing.Size(85, 16);
             this.lbl_Prisoner_id.TabIndex = 22;
             this.lbl_Prisoner_id.Text = "Prisoner ID";
             // 
             // lbl_vic_lawyer
             // 
             this.lbl_vic_lawyer.AutoSize = true;
-            this.lbl_vic_lawyer.Location = new System.Drawing.Point(12, 151);
+            this.lbl_vic_lawyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_vic_lawyer.Location = new System.Drawing.Point(12, 203);
             this.lbl_vic_lawyer.Name = "lbl_vic_lawyer";
-            this.lbl_vic_lawyer.Size = new System.Drawing.Size(79, 13);
+            this.lbl_vic_lawyer.Size = new System.Drawing.Size(115, 16);
             this.lbl_vic_lawyer.TabIndex = 23;
             this.lbl_vic_lawyer.Text = "Victim\'s Lawyer";
             // 
             // lbl_Pri_laywer
             // 
             this.lbl_Pri_laywer.AutoSize = true;
-            this.lbl_Pri_laywer.Location = new System.Drawing.Point(12, 180);
+            this.lbl_Pri_laywer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Pri_laywer.Location = new System.Drawing.Point(12, 250);
             this.lbl_Pri_laywer.Name = "lbl_Pri_laywer";
-            this.lbl_Pri_laywer.Size = new System.Drawing.Size(89, 13);
+            this.lbl_Pri_laywer.Size = new System.Drawing.Size(131, 16);
             this.lbl_Pri_laywer.TabIndex = 24;
             this.lbl_Pri_laywer.Text = "Prisoner\'s Lawyer";
             // 
             // txt_Judge_id
             // 
-            this.txt_Judge_id.Location = new System.Drawing.Point(107, 58);
+            this.txt_Judge_id.Location = new System.Drawing.Point(152, 60);
             this.txt_Judge_id.Name = "txt_Judge_id";
             this.txt_Judge_id.Size = new System.Drawing.Size(100, 20);
             this.txt_Judge_id.TabIndex = 25;
             // 
             // txt_Victim_id
             // 
-            this.txt_Victim_id.Location = new System.Drawing.Point(107, 88);
+            this.txt_Victim_id.Location = new System.Drawing.Point(152, 104);
             this.txt_Victim_id.Name = "txt_Victim_id";
             this.txt_Victim_id.Size = new System.Drawing.Size(100, 20);
             this.txt_Victim_id.TabIndex = 26;
             // 
             // txt_Victim_lawyer
             // 
-            this.txt_Victim_lawyer.Location = new System.Drawing.Point(107, 151);
+            this.txt_Victim_lawyer.Location = new System.Drawing.Point(152, 199);
             this.txt_Victim_lawyer.Name = "txt_Victim_lawyer";
             this.txt_Victim_lawyer.Size = new System.Drawing.Size(100, 20);
             this.txt_Victim_lawyer.TabIndex = 27;
@@ -281,84 +291,110 @@ namespace Court_System
             // 
             // txt_Prisoner_id
             // 
-            this.txt_Prisoner_id.Location = new System.Drawing.Point(107, 119);
+            this.txt_Prisoner_id.Location = new System.Drawing.Point(152, 151);
             this.txt_Prisoner_id.Name = "txt_Prisoner_id";
             this.txt_Prisoner_id.Size = new System.Drawing.Size(100, 20);
             this.txt_Prisoner_id.TabIndex = 28;
             // 
             // txt_Prisoner_lawyer
             // 
-            this.txt_Prisoner_lawyer.Location = new System.Drawing.Point(107, 180);
+            this.txt_Prisoner_lawyer.Location = new System.Drawing.Point(152, 246);
             this.txt_Prisoner_lawyer.Name = "txt_Prisoner_lawyer";
             this.txt_Prisoner_lawyer.Size = new System.Drawing.Size(100, 20);
             this.txt_Prisoner_lawyer.TabIndex = 29;
             // 
             // btn_judge_id
             // 
-            this.btn_judge_id.Location = new System.Drawing.Point(232, 56);
+            this.btn_judge_id.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_judge_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_judge_id.Location = new System.Drawing.Point(300, 60);
             this.btn_judge_id.Name = "btn_judge_id";
             this.btn_judge_id.Size = new System.Drawing.Size(75, 23);
             this.btn_judge_id.TabIndex = 30;
             this.btn_judge_id.Text = "Add";
-            this.btn_judge_id.UseVisualStyleBackColor = true;
+            this.btn_judge_id.UseVisualStyleBackColor = false;
             this.btn_judge_id.Click += new System.EventHandler(this.btn_judge_id_Click);
             // 
             // btn_Prisoner_id
             // 
-            this.btn_Prisoner_id.Location = new System.Drawing.Point(232, 120);
+            this.btn_Prisoner_id.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_Prisoner_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Prisoner_id.Location = new System.Drawing.Point(300, 149);
             this.btn_Prisoner_id.Name = "btn_Prisoner_id";
             this.btn_Prisoner_id.Size = new System.Drawing.Size(75, 23);
             this.btn_Prisoner_id.TabIndex = 32;
             this.btn_Prisoner_id.Text = "Add";
-            this.btn_Prisoner_id.UseVisualStyleBackColor = true;
+            this.btn_Prisoner_id.UseVisualStyleBackColor = false;
             this.btn_Prisoner_id.Click += new System.EventHandler(this.btn_Prisoner_id_Click);
             // 
             // btn_Victim_lawyer
             // 
-            this.btn_Victim_lawyer.Location = new System.Drawing.Point(232, 151);
+            this.btn_Victim_lawyer.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_Victim_lawyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Victim_lawyer.Location = new System.Drawing.Point(300, 197);
             this.btn_Victim_lawyer.Name = "btn_Victim_lawyer";
             this.btn_Victim_lawyer.Size = new System.Drawing.Size(75, 23);
             this.btn_Victim_lawyer.TabIndex = 33;
             this.btn_Victim_lawyer.Text = "Add";
-            this.btn_Victim_lawyer.UseVisualStyleBackColor = true;
+            this.btn_Victim_lawyer.UseVisualStyleBackColor = false;
             this.btn_Victim_lawyer.Click += new System.EventHandler(this.btn_Victim_lawyer_Click);
             // 
             // btn_Prisoner_lawyer
             // 
-            this.btn_Prisoner_lawyer.Location = new System.Drawing.Point(232, 178);
+            this.btn_Prisoner_lawyer.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_Prisoner_lawyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Prisoner_lawyer.Location = new System.Drawing.Point(300, 243);
             this.btn_Prisoner_lawyer.Name = "btn_Prisoner_lawyer";
             this.btn_Prisoner_lawyer.Size = new System.Drawing.Size(75, 23);
             this.btn_Prisoner_lawyer.TabIndex = 34;
             this.btn_Prisoner_lawyer.Text = "Add";
-            this.btn_Prisoner_lawyer.UseVisualStyleBackColor = true;
+            this.btn_Prisoner_lawyer.UseVisualStyleBackColor = false;
             this.btn_Prisoner_lawyer.Click += new System.EventHandler(this.btn_Prisoner_lawyer_Click);
             // 
             // btn_Finish
             // 
-            this.btn_Finish.Location = new System.Drawing.Point(116, 240);
+            this.btn_Finish.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_Finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Finish.Location = new System.Drawing.Point(164, 309);
             this.btn_Finish.Name = "btn_Finish";
             this.btn_Finish.Size = new System.Drawing.Size(75, 28);
             this.btn_Finish.TabIndex = 35;
             this.btn_Finish.Text = "Finish";
-            this.btn_Finish.UseVisualStyleBackColor = true;
+            this.btn_Finish.UseVisualStyleBackColor = false;
             this.btn_Finish.Click += new System.EventHandler(this.btn_Finish_Click);
             // 
             // btn_Victim_id
             // 
-            this.btn_Victim_id.Location = new System.Drawing.Point(232, 91);
+            this.btn_Victim_id.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_Victim_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Victim_id.Location = new System.Drawing.Point(300, 101);
             this.btn_Victim_id.Name = "btn_Victim_id";
             this.btn_Victim_id.Size = new System.Drawing.Size(75, 23);
             this.btn_Victim_id.TabIndex = 36;
             this.btn_Victim_id.Text = "Add";
-            this.btn_Victim_id.UseVisualStyleBackColor = true;
+            this.btn_Victim_id.UseVisualStyleBackColor = false;
             this.btn_Victim_id.Click += new System.EventHandler(this.btn_Victim_id_Click);
+            // 
+            // pictureBoxBack
+            // 
+            this.pictureBoxBack.Image = global::Court_System.Properties.Resources.arrowBackTwo;
+            this.pictureBoxBack.Location = new System.Drawing.Point(15, 11);
+            this.pictureBoxBack.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxBack.Name = "pictureBoxBack";
+            this.pictureBoxBack.Size = new System.Drawing.Size(38, 39);
+            this.pictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBack.TabIndex = 37;
+            this.pictureBoxBack.TabStop = false;
+            this.pictureBoxBack.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // Cases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(783, 448);
+            this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.btn_Victim_id);
             this.Controls.Add(this.btn_Finish);
             this.Controls.Add(this.btn_Prisoner_lawyer);
@@ -376,7 +412,6 @@ namespace Court_System
             this.Controls.Add(this.lbl_victim_id);
             this.Controls.Add(this.lbl_judge_id);
             this.Controls.Add(this.cmb_case_room_name);
-            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.cmb_case_id);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_update);
@@ -395,6 +430,7 @@ namespace Court_System
             this.Text = "Cases";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cases_FormClosing);
             this.Load += new System.EventHandler(this.Cases_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,7 +451,6 @@ namespace Court_System
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.ComboBox cmb_case_id;
         private System.Windows.Forms.DateTimePicker case_date;
-        private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.ComboBox cmb_case_room_name;
         private System.Windows.Forms.Label lbl_judge_id;
         private System.Windows.Forms.Label lbl_victim_id;
@@ -433,5 +468,6 @@ namespace Court_System
         private System.Windows.Forms.Button btn_Prisoner_lawyer;
         private System.Windows.Forms.Button btn_Finish;
         private System.Windows.Forms.Button btn_Victim_id;
+        private System.Windows.Forms.PictureBox pictureBoxBack;
     }
 }

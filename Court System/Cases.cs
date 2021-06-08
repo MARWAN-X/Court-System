@@ -477,6 +477,16 @@ namespace Court_System
             }
         }
 
+        private void lbl_case_description_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_case_name_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_judge_id_Click(object sender, EventArgs e)
         {
             if (txt_Judge_id.Text.Length != 14)
