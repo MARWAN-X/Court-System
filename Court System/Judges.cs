@@ -98,6 +98,11 @@ namespace Court_System
         {
             data_Judge.Hide();
         }
+
+        private void txt_JudgeID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         //12345768912346
     }
 }
