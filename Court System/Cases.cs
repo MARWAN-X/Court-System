@@ -358,7 +358,7 @@ namespace Court_System
             }
             if (ok)
             {
-                /*  hide_extra();
+                /*hide_extra();
                   show_case();
                   victims.Clear();
                   prisoners.Clear();
