@@ -36,7 +36,7 @@ namespace Court_System
             crystalReportViewer.ReportSource = cr;
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
+        private void pictureBoxBack_Click(object sender, EventArgs e)
         {
             Menu menuForm = new Menu();
             this.Hide();

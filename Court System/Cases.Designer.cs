@@ -66,14 +66,14 @@ namespace Court_System
             // 
             // txt_case_name
             // 
-            this.txt_case_name.Location = new System.Drawing.Point(407, 97);
+            this.txt_case_name.Location = new System.Drawing.Point(353, 93);
             this.txt_case_name.Name = "txt_case_name";
             this.txt_case_name.Size = new System.Drawing.Size(221, 20);
             this.txt_case_name.TabIndex = 2;
             // 
             // txt_case_description
             // 
-            this.txt_case_description.Location = new System.Drawing.Point(407, 140);
+            this.txt_case_description.Location = new System.Drawing.Point(353, 136);
             this.txt_case_description.Name = "txt_case_description";
             this.txt_case_description.Size = new System.Drawing.Size(221, 20);
             this.txt_case_description.TabIndex = 3;
@@ -82,7 +82,7 @@ namespace Court_System
             // 
             this.cmb_case_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_case_status.FormattingEnabled = true;
-            this.cmb_case_status.Location = new System.Drawing.Point(407, 178);
+            this.cmb_case_status.Location = new System.Drawing.Point(353, 174);
             this.cmb_case_status.Name = "cmb_case_status";
             this.cmb_case_status.Size = new System.Drawing.Size(221, 21);
             this.cmb_case_status.TabIndex = 4;
@@ -91,7 +91,7 @@ namespace Court_System
             // 
             this.lbl_case_id.AutoSize = true;
             this.lbl_case_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_case_id.Location = new System.Drawing.Point(258, 64);
+            this.lbl_case_id.Location = new System.Drawing.Point(204, 60);
             this.lbl_case_id.Name = "lbl_case_id";
             this.lbl_case_id.Size = new System.Drawing.Size(63, 16);
             this.lbl_case_id.TabIndex = 5;
@@ -101,7 +101,7 @@ namespace Court_System
             // 
             this.lbl_case_name.AutoSize = true;
             this.lbl_case_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_case_name.Location = new System.Drawing.Point(258, 101);
+            this.lbl_case_name.Location = new System.Drawing.Point(204, 97);
             this.lbl_case_name.Name = "lbl_case_name";
             this.lbl_case_name.Size = new System.Drawing.Size(89, 16);
             this.lbl_case_name.TabIndex = 6;
@@ -112,7 +112,7 @@ namespace Court_System
             // 
             this.lbl_case_description.AutoSize = true;
             this.lbl_case_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_case_description.Location = new System.Drawing.Point(258, 141);
+            this.lbl_case_description.Location = new System.Drawing.Point(204, 137);
             this.lbl_case_description.Name = "lbl_case_description";
             this.lbl_case_description.Size = new System.Drawing.Size(127, 16);
             this.lbl_case_description.TabIndex = 7;
@@ -123,7 +123,7 @@ namespace Court_System
             // 
             this.lbl_case_status.AutoSize = true;
             this.lbl_case_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_case_status.Location = new System.Drawing.Point(258, 183);
+            this.lbl_case_status.Location = new System.Drawing.Point(204, 179);
             this.lbl_case_status.Name = "lbl_case_status";
             this.lbl_case_status.Size = new System.Drawing.Size(91, 16);
             this.lbl_case_status.TabIndex = 8;
@@ -133,7 +133,7 @@ namespace Court_System
             // 
             this.lbl_case_date.AutoSize = true;
             this.lbl_case_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_case_date.Location = new System.Drawing.Point(258, 225);
+            this.lbl_case_date.Location = new System.Drawing.Point(204, 221);
             this.lbl_case_date.Name = "lbl_case_date";
             this.lbl_case_date.Size = new System.Drawing.Size(81, 16);
             this.lbl_case_date.TabIndex = 10;
@@ -143,7 +143,7 @@ namespace Court_System
             // 
             this.lbl_case_room_name.AutoSize = true;
             this.lbl_case_room_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_case_room_name.Location = new System.Drawing.Point(258, 259);
+            this.lbl_case_room_name.Location = new System.Drawing.Point(204, 255);
             this.lbl_case_room_name.Name = "lbl_case_room_name";
             this.lbl_case_room_name.Size = new System.Drawing.Size(89, 16);
             this.lbl_case_room_name.TabIndex = 12;
@@ -193,7 +193,7 @@ namespace Court_System
             this.cmb_case_id.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cmb_case_id.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_case_id.FormattingEnabled = true;
-            this.cmb_case_id.Location = new System.Drawing.Point(407, 59);
+            this.cmb_case_id.Location = new System.Drawing.Point(353, 55);
             this.cmb_case_id.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_case_id.Name = "cmb_case_id";
             this.cmb_case_id.Size = new System.Drawing.Size(221, 21);
@@ -202,7 +202,7 @@ namespace Court_System
             // 
             // case_date
             // 
-            this.case_date.Location = new System.Drawing.Point(407, 221);
+            this.case_date.Location = new System.Drawing.Point(353, 217);
             this.case_date.Name = "case_date";
             this.case_date.Size = new System.Drawing.Size(221, 20);
             this.case_date.TabIndex = 9;
@@ -211,7 +211,7 @@ namespace Court_System
             // 
             this.cmb_case_room_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_case_room_name.FormattingEnabled = true;
-            this.cmb_case_room_name.Location = new System.Drawing.Point(407, 254);
+            this.cmb_case_room_name.Location = new System.Drawing.Point(353, 250);
             this.cmb_case_room_name.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_case_room_name.Name = "cmb_case_room_name";
             this.cmb_case_room_name.Size = new System.Drawing.Size(221, 21);

@@ -162,7 +162,7 @@ namespace Court_System
             this.lbl_l_name_val.Name = "lbl_l_name_val";
             this.lbl_l_name_val.Size = new System.Drawing.Size(55, 13);
             this.lbl_l_name_val.TabIndex = 1;
-            this.lbl_l_name_val.Text = ";
+            this.lbl_l_name_val.Text = "";
             // 
             // lbl_rank_val
             // 
@@ -197,7 +197,7 @@ namespace Court_System
             this.data_Judge.RowHeadersWidth = 51;
             this.data_Judge.Size = new System.Drawing.Size(644, 235);
             this.data_Judge.TabIndex = 5;
-            this.data_Judge.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_Judge_CellContentClick);
+           // this.data_Judge.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_Judge_CellContentClick);
             // 
             // pictureBoxBack
             // 

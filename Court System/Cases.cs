@@ -26,7 +26,7 @@ namespace Court_System
         }
         private void hide_case()
         {
-            btn_back.Hide();
+            //btn_back.Hide();
             btn_delete.Hide();
             btn_insert.Hide();
             btn_update.Hide();
@@ -84,7 +84,7 @@ namespace Court_System
         }
         private void show_case()
         {
-            btn_back.Show();
+            //btn_back.Show();
             btn_delete.Show();
             btn_insert.Show();
             btn_update.Show();

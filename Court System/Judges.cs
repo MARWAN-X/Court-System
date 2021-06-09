@@ -103,7 +103,6 @@ namespace Court_System
         {
 
         }
-
         private void lbl_rank_Click(object sender, EventArgs e)
         {
 
