@@ -33,8 +33,7 @@ namespace Court_System
                 MessageBox.Show("Please enter valid SSN");
                 return;
             }
-            conn = new OracleConnection(ordb);
-            conn.Open();
+            
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
             c.CommandText = "select * from judges where J_SSN = :id";
@@ -97,6 +96,8 @@ namespace Court_System
         private void Judges_Load(object sender, EventArgs e)
         {
             data_Judge.Hide();
+            conn = new OracleConnection(ordb);
+            conn.Open();
         }
 
         private void lbl_birthdate_Click(object sender, EventArgs e)

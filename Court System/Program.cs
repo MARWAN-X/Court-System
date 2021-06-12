@@ -16,7 +16,7 @@ namespace Court_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new Log_In_Form());
         }
     }
 }

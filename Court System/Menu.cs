@@ -40,7 +40,8 @@ namespace Court_System
 
         private void Menu_Load(object sender, EventArgs e)
         {
-
+            comboBox1.Items.Add("First Crystal Report");
+            comboBox1.Items.Add("Second Crystal Report");
         }
 
         private void btn_report_Click(object sender, EventArgs e)
@@ -49,6 +50,29 @@ namespace Court_System
             this.Hide();
             rf.Show();
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == "First Crystal Report")
+            {
+                Report_form rf = new Report_form();
+                this.Hide();
+                rf.Show();
+            }
+            else if (comboBox1.SelectedItem == "Second Crystal Report")
+            {
+                Report_form2 rf = new Report_form2();
+                this.Hide();
+                rf.Show();
+            }
+            else
+                MessageBox.Show("Please choose Crystal Report");
         }
     }
 }

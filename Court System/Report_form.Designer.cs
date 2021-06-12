@@ -41,9 +41,10 @@ namespace Court_System
             // 
             this.lbl_Case_ID.AutoSize = true;
             this.lbl_Case_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Case_ID.Location = new System.Drawing.Point(527, 16);
+            this.lbl_Case_ID.Location = new System.Drawing.Point(703, 20);
+            this.lbl_Case_ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Case_ID.Name = "lbl_Case_ID";
-            this.lbl_Case_ID.Size = new System.Drawing.Size(87, 18);
+            this.lbl_Case_ID.Size = new System.Drawing.Size(105, 24);
             this.lbl_Case_ID.TabIndex = 0;
             this.lbl_Case_ID.Text = "Case Date";
             this.lbl_Case_ID.Click += new System.EventHandler(this.lbl_Case_ID_Click);
@@ -52,9 +53,10 @@ namespace Court_System
             // 
             this.btn_Generate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_Generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Generate.Location = new System.Drawing.Point(861, 9);
+            this.btn_Generate.Location = new System.Drawing.Point(1148, 11);
+            this.btn_Generate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Generate.Name = "btn_Generate";
-            this.btn_Generate.Size = new System.Drawing.Size(104, 32);
+            this.btn_Generate.Size = new System.Drawing.Size(139, 39);
             this.btn_Generate.TabIndex = 2;
             this.btn_Generate.Text = "Generate";
             this.btn_Generate.UseVisualStyleBackColor = false;
@@ -65,26 +67,29 @@ namespace Court_System
             this.crystalReportViewer.ActiveViewIndex = -1;
             this.crystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer.Location = new System.Drawing.Point(2, 47);
+            this.crystalReportViewer.Location = new System.Drawing.Point(3, 58);
+            this.crystalReportViewer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.crystalReportViewer.Name = "crystalReportViewer";
-            this.crystalReportViewer.Size = new System.Drawing.Size(1562, 598);
+            this.crystalReportViewer.Size = new System.Drawing.Size(2082, 736);
             this.crystalReportViewer.TabIndex = 3;
+            this.crystalReportViewer.ToolPanelWidth = 267;
             this.crystalReportViewer.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(637, 16);
+            this.dateTimePicker1.Location = new System.Drawing.Point(849, 20);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // pictureBoxBack
             // 
             this.pictureBoxBack.Image = global::Court_System.Properties.Resources.arrowBackTwo;
-            this.pictureBoxBack.Location = new System.Drawing.Point(27, 3);
-            this.pictureBoxBack.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxBack.Location = new System.Drawing.Point(36, 4);
+            this.pictureBoxBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxBack.Name = "pictureBoxBack";
-            this.pictureBoxBack.Size = new System.Drawing.Size(38, 39);
+            this.pictureBoxBack.Size = new System.Drawing.Size(51, 48);
             this.pictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBack.TabIndex = 38;
             this.pictureBoxBack.TabStop = false;
@@ -92,17 +97,18 @@ namespace Court_System
             // 
             // Report_form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1567, 654);
+            this.ClientSize = new System.Drawing.Size(1924, 805);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.crystalReportViewer);
             this.Controls.Add(this.btn_Generate);
             this.Controls.Add(this.lbl_Case_ID);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Report_form";
-            this.Text = "Report_form";
+            this.Text = "First Crystal Report";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
