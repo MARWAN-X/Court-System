@@ -14,6 +14,6 @@ The system stores information about each crime, information including the judge,
 ### Used in development
 
 * Connected and disconnected modes of ODP.Net
-* Data manipulation (Insert/ delete)
+* Data manipulation (Insert/ Delete/ Update)
 * Data definition (Create/ Alter)
 * Data retrieval
